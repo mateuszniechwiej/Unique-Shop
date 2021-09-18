@@ -1,108 +1,213 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Table of Contest
 
-Welcome USER_NAME,
+- [UX](#ux)
+  - [The Strategy Plane](#the-strategy-plane)
+    - [Project Goal](#project-goal)
+    - [Site Goals](#site-goals)
+    - [User Stories](#user-stories)
+  - [The Scope Plane](#the-scope-plane)
+    - [Planed Features](#planed-features)
+  - [The Structure Plane](#the-structure-plane)
+  - [The Skeleton Plane](#the-skeleton-plane)
+    - [Wireframes](#wireframes)
+  - [The Surface Plane](#the-surface-plane)
+  - [Design](#design)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Database Architecture](#database-architecture)
+    - [Imagery](#imagery)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
+- [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used)
+  - [Frameworks, Programmes and Libraries](#frameworks-programmes-and-libraries)
+- [Testing](#testing)
+- [Code Issues](#code-issues)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+- [Deployment](#deployment)
+  - [Project Initiation](#project-initiation)
+  - [Heroku Deployment](#heroku-deployment)
+- [Credits](#credits)
+  - [Code](#code)
+  - [Acknowledgements](#acknowledgements)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+# UX
 
-## Gitpod Reminders
+## The Strategy Plane
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### _Project Goal_
 
-`python3 -m http.server`
+This website project 
 
-A blue button should appear to click: _Make Public_,
+### _Site Goals_
 
-Another blue button should appear to click: _Open Browser_.
+- To provide users with a simple and easily navigated website 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+### _User Stories_
 
-Another blue button should appear to click: _Open Browser_.
+1. As a user, I want to understand the purpose of this website.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+2. As a user, I want to find an easy navigate website and find all the content.
 
-To log into the Heroku toolbelt CLI:
+3. As a user, I want the website to be responsive and allow me to use it comfortably on all size devices(particularly mobiles phones).
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## The Scope Plane
 
-------
+### _Planed Features_
 
-## Release History
+ 1. Users able to register.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+ 2. Allow admin and users to login.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+ 3. Display Users profile.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+ 4. Responsive website with a navigation menu and website title.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+| -   | Planed Feature                                                     | Importance | Viability/Feasibility |
+| --- | ------------------------------------------------------------------ | ---------- | --------------------- |
+| 1   | Users able to register                                             | 5          | 3                     |
+| 2   | Allow admin and users to login                                     | 5          | 3                     |
+| 3   |       | ?          | ?                     |
+| 4   |             | ?          | ?                     |
+| 5   | Display Users profile                                              | 4          | 4                     |
+| 6   |                          | ?          | ?                     |
+| 7   |                      | ?          | ?                     |
+| 8   |   | ?          | ?                     |
+| 9   | Use SQLite database to store information ... | 5          | 4                     |
+| 10  | Responsive website with a navigation menu and website title        | 5          | 2                     |
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## The Structure Plane
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### _Addresing users stories_
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+> As a user, I want to understand the purpose of this website.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+A solution to satisfy user requirements:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Top navigation menu in the Header displaying Home, Login, and Registration links.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+> As a user, I want to find an easly navigated website and find all the content.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+A solution to satisfy user requirements:
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+> As a user, I want the website to be responsive and allow me to use it comfortably on all size devices(particularly mobiles phones).
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+A solution to satisfy user requirements:
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Bootstrap 5 will be used for this website to ensure all content is displayed correctly.
 
-------
+> As a user, I want to be able to register to the website 
 
-## FAQ about the uptime script
+A solution to satisfy user requirements:
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+> As a user, I want to be able to contact the site owner for any questions or suggestions I might have.
 
-**How will this affect me?**
+A solution to satisfy user requirements:
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## The Skeleton Plane
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### _Wireframes_
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## The Surface Plane
 
-**Can I opt out?**
+### Design
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### Colour Scheme
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+#### Typography
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+:black_nib:
 
----
+### Differences to design:
 
-Happy coding!
+### Database Architecture
+
+
+### Imagery
+
+## Features
+
+### Existing Features
+
+1. Mobile responsive design.
+2. Register and login functionality.
+3. Profile page with username name and email.
+3. Error page to display error messages.
+
+
+### Future Features
+
+
+## Technologies Used
+
+### Languages Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+* [JavaScript](https://pl.wikipedia.org/wiki/JavaScript)
+
+* [Python](https://www.python.org/)
+    - Python Modules used in this project can be found in the requirements.txt project file)
+
+## Frameworks, Programmes and Libraries
+* [JIRA](https://www.atlassian.com/software/jira) - project management tool to organize workflow.
+* [Adobe Xd](https://www.adobe.com/ie/products/xd/wireframing-tool.html#:~:text=Adobe%20XD%20is%20a%20powerful,all%20in%20one%20design%20tool.) - to create wireframes
+* [techsini](https://techsini.com/) - to generate website mock-up.
+* [Google Fonts](https://fonts.google.com/) - 
+* [Font Awesome](https://fontawesome.com/) - for social media links and forms icons.
+* [Heroku](https://heroku.com) - Heroku was to deploy and host the live website.
+* [Visual Studio Code](https://code.visualstudio.com/) - used for developing this website and commit the project to GitHub repository.
+* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - used to debug the styling issues, test the website responsiveness and to make sure colour contrast is correct.
+* [Github](https://github.com/) - Github as the hosting site was used to store the source code of this website.
+* [Git](https://git-scm.com/) - used Git to commit and push code to the GitHub repository.
+* [Favicon](https://favicon.io/) - to create a favicon for this Website.
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse) - as a part of the chrome dev tool was used to improve the quality of the web page.
+
+## Testing
+
+Testing :point_right: [TESTING.md]
+
+## Code Issues
+
+**Understanding the problem** - 
+
+**Solution** - 
+
+## Deployment
+
+### Local Clone
+1. Navigating to the GitHub [Repository](https://github.com/mateuszniechwiej/Climbing-Buddy)
+2. Click on Code green button.
+3. Under the Clone section, copy the URL from the HTTPS : 
+
+5. Use the IDE of choice to open the terminal.
+
+6. Use git clone command followed by the copied URL.
+
+7. A clone of the project will now be created locally on your machine.
+
+### Create a Virtual Environment(VSCode)
+__(You need to have installed Python extensions and Python version 3 before taking following steps )__
+1. On the the local system create project folder 
+2. In that folder use (for Windows) the command: 
+3. Select and activate an environment (To select a specific environment, use the `Python: Select Interpreter` command from the `Command Palette (Ctrl+Shift+P)`.
+
+More info: [VSCode docs](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment)
+
+### Heroku Deployment
+
+## Credits
+
+### Code
+
+## Acknowledgements
