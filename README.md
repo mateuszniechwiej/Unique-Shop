@@ -1,3 +1,9 @@
+# Unique Shop
+
+This project is an e-commerce website created for Milestone Project 4("Code Institute").
+UNIQUE Crafts & Design is a shop selling handcrafted items. Located in Geroge's Street Arcade 
+in Dublin city centre.
+
 # Table of Contest
 
 - [UX](#ux)
@@ -59,24 +65,27 @@ This website project
 ### _Planed Features_
 
  1. Users able to register.
-
  2. Allow admin and users to login.
-
- 3. Display Users profile.
-
- 4. Responsive website with a navigation menu and website title.
+ 3. Allow user to purches items online.
+ 4. Allow user to review shop products.
+ 5. Display users profile.
+ 6. Display Users orders.
+ 7. Search product functionality.
+ 8. Add and reedem voucher for users.
+ 9. Use SQLite database to store information
+ 10. Responsive website with a navigation menu and website title.
 
 | -   | Planed Feature                                                     | Importance | Viability/Feasibility |
 | --- | ------------------------------------------------------------------ | ---------- | --------------------- |
 | 1   | Users able to register                                             | 5          | 3                     |
-| 2   | Allow admin and users to login                                     | 5          | 3                     |
-| 3   |       | ?          | ?                     |
-| 4   |             | ?          | ?                     |
+| 2   | Allow admin and users to login                                     | 5          | 3                     | 
+| 3   |  Allow user to purches items online     | 5          | 5                     | 
+| 4   | Allow user to review shop products            | 4          | 5                     |
 | 5   | Display Users profile                                              | 4          | 4                     |
-| 6   |                          | ?          | ?                     |
-| 7   |                      | ?          | ?                     |
-| 8   |   | ?          | ?                     |
-| 9   | Use SQLite database to store information ... | 5          | 4                     |
+| 6   | Display Users orders                         | 4          | 4                     |
+| 7   | Search product functionality                 | 4          | 3                     |
+| 8   | Add and reedem voucher for users  | 3          | 5                     |
+| 9   | Use SQLite database to store information  | 5          | 4                     |
 | 10  | Responsive website with a navigation menu and website title        | 5          | 2                     |
 
 ## The Structure Plane
