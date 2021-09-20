@@ -44,35 +44,69 @@ in Dublin city centre.
 
 ### _Project Goal_
 
-This website project 
+Unique shop is a full stack e-commerce web application for a handmade craft shop in Dublin.
+Customer will be able to purchase items offered by the shop.Registered user will be able to save and update information and receive a discount voucher to use at the checkout.
+
+The aim is to build responsive e-commerce 
 
 ### _Site Goals_
 
-- To provide users with a simple and easily navigated website 
+- To provide users with a simple and easily navigated website.
 
+- To sell the products the shop has to offer.
+
+- To offer secure online payment for shoppers.
 
 ### _User Stories_
 
 1. As a user, I want to understand the purpose of this website.
 
-2. As a user, I want to find an easy navigate website and find all the content.
+2. As a user, I want to find an easily navigated website and find all the content.
 
 3. As a user, I want the website to be responsive and allow me to use it comfortably on all size devices(particularly mobiles phones).
 
+4. As a user, I want to find an clear and easy registartion on the website.
+
+5. As a user, I want to receive an email confirmation upon registering.
+
+6. As a user, I want to be able to log in/log out to/from my account.
+
+7. As a user, I want to control my account information and have the option to update my profile details and delete the account.
+
+8. As a user, I want to view individual product information and be able review that item.
+
+9. As a user, I want to view total of my purchases and the final cost including delivery.
+
+10. As a user, I want to have products gruped in categories.
+
+11. As a user, I want to be able to search for the products I'm intrested in.
+
+12. As a user, I want to select quantity of products I'm buying.
+
+13. As a user, I want to be able to contact the site owner for any questions or suggestions I might have.
 
 ## The Scope Plane
 
 ### _Planed Features_
 
- 1. Users able to register.
- 2. Allow admin and users to login.
- 3. Allow user to purches items online.
- 4. Allow user to review shop products.
- 5. Display users profile.
+ 1. Users can register.
+
+ 2. Allow admin and users to log in.
+
+ 3. Allow users to purchase items online.
+
+ 4. Allow users to review shop products.
+
+ 5. Display users profiles.
+
  6. Display Users orders.
+
  7. Search product functionality.
- 8. Add and reedem voucher for users.
+
+ 8. Add and redeem a voucher for users.
+
  9. Use SQLite database to store information
+
  10. Responsive website with a navigation menu and website title.
 
 | -   | Planed Feature                                                     | Importance | Viability/Feasibility |
@@ -96,12 +130,21 @@ This website project
 
 A solution to satisfy user requirements:
 
-- Top navigation menu in the Header displaying Home, Login, and Registration links.
+- Shop logo in the navigation bar.
 
-> As a user, I want to find an easly navigated website and find all the content.
+- Categories and product links in the header.
+
+- Image carousel showing the main products this shop has to offer.
+
+- Additional information in the footer including about section, social links etc.
+
+> As a user, I want to find an easily navigated website and find all the content.
 
 A solution to satisfy user requirements:
 
+- Top navigation menu in the Header displaying Home, Login, and Registration links.
+
+- Footer at the bottom of the page.
 
 > As a user, I want the website to be responsive and allow me to use it comfortably on all size devices(particularly mobiles phones).
 
@@ -109,20 +152,86 @@ A solution to satisfy user requirements:
 
 - Bootstrap 5 will be used for this website to ensure all content is displayed correctly.
 
-> As a user, I want to be able to register to the website 
+- Collapsible menu when using the website on mobile phones.
+
+> As a user, I want to be able to register to the website. 
 
 A solution to satisfy user requirements:
 
+- registration link available in the navigation bar.
+
+- link to redirect to registration when on the login page.
+
+> As a user, I want to receive an email confirmation upon registering.
+
+A solution to satisfy user requirements:
+
+- confirmation email will be sent once the registration form will be submitted.
+
+> As a user, I want to be able to log in/log out to/from my account.
+
+A solution to satisfy user requirements:
+
+- log in/out links available in the navigation bar menu.
+
+- log in to the link also available on the registration page if the user has already an account.
+
+> As a user, I want to control my account information and have the option to update my profile details and delete the account.
+
+A solution to satisfy user requirements:
+
+- edit and delete buttons available on the account profile page once a user logged in.
+
+> As a user, I want to view individual product information and be able to review that item.
+
+A solution to satisfy user requirements:
+
+- once clicked on the product image, the user will be redirected to a product details page.
+
+- all products can be reviewed once on the product detail page.
+
+> As a user, I want to view the total of my purchases and the final cost including delivery
+
+A solution to satisfy user requirements:
+
+- After adding each item the current total will be visible in the modal.
+
+- information about the total price for items will be available in the shopping cart.
+
+- final cost including shipping fees available at the secure checkout before making the payment.
+
+> As a user, I want to have products grouped in categories.
+
+A solution to satisfy user requirements:
+
+- in the navigation menu user can find categories and all product links.
+
+> As a user, I want to be able to search for the products I'm interested in.
+
+A solution to satisfy user requirements:
+
+- search bar introduce to allow the user to search by categories and product description.
+
+> As a user, I want to select the number of products I'm buying.
+
+A solution to satisfy user requirements:
+
+- users can select the quantity of each item on the product page.
+
+- in the shopping cart user can update the quantity of each product or delete it from the basket.
 
 > As a user, I want to be able to contact the site owner for any questions or suggestions I might have.
 
 A solution to satisfy user requirements:
 
+- contact information in the footer including shop address.
+
+- social links are provided where the user can contact the shop owners.
 
 ## The Skeleton Plane
 
 ### _Wireframes_
-
+Wireframes can be accessed :point_right: [here](wireframes/).
 
 ## The Surface Plane
 
@@ -170,7 +279,7 @@ A solution to satisfy user requirements:
 
 ## Frameworks, Programmes and Libraries
 * [JIRA](https://www.atlassian.com/software/jira) - project management tool to organize workflow.
-* [Adobe Xd](https://www.adobe.com/ie/products/xd/wireframing-tool.html#:~:text=Adobe%20XD%20is%20a%20powerful,all%20in%20one%20design%20tool.) - to create wireframes
+* [Balsamiq](https://balsamiq.com/) - to create wireframes
 * [techsini](https://techsini.com/) - to generate website mock-up.
 * [Google Fonts](https://fonts.google.com/) - 
 * [Font Awesome](https://fontawesome.com/) - for social media links and forms icons.
