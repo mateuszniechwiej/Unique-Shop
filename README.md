@@ -238,11 +238,17 @@ Wireframes can be accessed :point_right: [here](wireframes/).
 ### Design
 
 #### Colour Scheme
-
+![Colour Pallette](wireframes/colours.png)
 
 #### Typography
 
 :black_nib:
+
+Fonts used in this project are:
+
+'__Spirax__' with *cursive* as a fallback font to give headlines a refined and interesting look is paired with a simple neutral  '__Open Sans Condensed__' with '*sans-serif*' as fallback.
+
+This combination works well with this shop selling uniquely designed handmade products.
 
 ### Differences to design:
 
