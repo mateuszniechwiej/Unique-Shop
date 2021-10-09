@@ -2,17 +2,35 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            {% for product in products %}
-                {{ product.name }}
-                {{ product.price }}
+<div class="container mt-5">
+    <div class="row mt-5">
+        {% for product in products %}
+        <div class="col-sm-6 col-lg-4 col-xl-3 mt-5">
+            <div class="card h-100 mt-5">
+                {% if product.image %}
                 <a href="">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
-            {% endfor %}
+                {% endif %}
+                <div class="card-body">
+                    <p class="mb-0">{{ product.name }}</p>
+                </div>
+                <div class="card-footer">
+                    {% if not product.has_sizes %}
+                    {{ product.price }}
+                    {% else %}
+                    <form action="">
+                        <select class='form-select' name="size" id="size">
+                            {% for item in product.variation_set.all %}
+                            <option value="{{ item.size|lower }}">{{ item.size|capfirst }} {{ item.price }}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
