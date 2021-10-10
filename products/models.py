@@ -40,7 +40,7 @@ class Product(models.Model):
         return self.name
 
 
-class Variation(models.Model):
+class Sizes(models.Model):
     """
     Model for product price per size variations
     """
@@ -51,4 +51,6 @@ class Variation(models.Model):
 
     def __str__(self):
         return self.size
+
+
 
