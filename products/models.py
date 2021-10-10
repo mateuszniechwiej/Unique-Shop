@@ -1,11 +1,6 @@
 from django.db import models
 from djmoney.models.fields import MoneyField
 
-SIZE_CHOICES = (
-    ('small', 'S'),
-    ('medium', 'M'),
-    ('large', 'L'),
-)
 
 class Category(models.Model):
     """
@@ -40,7 +35,15 @@ class Product(models.Model):
         return self.name
 
 
-class Sizes(models.Model):
+SIZE_CHOICES = (
+    ('small', 'S'),
+    ('medium', 'M'),
+    ('large', 'L'),
+)
+
+
+
+class Size(models.Model):
     """
     Model for product price per size variations
     """
@@ -51,6 +54,29 @@ class Sizes(models.Model):
 
     def __str__(self):
         return self.size
+
+
+COLOURS_CHOICES = (
+    ('red', 'RED'),
+    ('yellow', 'YELLOW'),
+    ('blue', 'BLUE')
+)
+
+class Colour(models.Model):
+    """
+    Model for product colours
+    """
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    colour = models.CharField(max_length=120, choices=COLOURS_CHOICES, default='red')
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.colour
+
+
+
+
 
 
 
