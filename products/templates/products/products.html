@@ -22,9 +22,9 @@
                         </a>
                     </p>
                     {% if not product.has_sizes %}
-                    {{ product.price }}
+                    €{{ product.price }}
                     {% else %}
-                        <p> From {{ product.price }} </p>
+                        <p> From €{{ product.price }} </p>
                     {% endif %}
                 </div>
             </div>
