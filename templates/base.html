@@ -51,8 +51,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}">Products</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" role="button" href="#" id="all-products-link" data-bs-toggle="dropdown" aria-expanded="false">All Products</a>
+                        <div class="dropdown-menu " aria-labelledby="all-products-link">
+                            <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                            <a href="" class="dropdown-item ">By Rating</a>
+                            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                            <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" role="button" href="#" id="collections" data-bs-toggle="dropdown" aria-expanded="false">Collections</a>
@@ -60,7 +66,8 @@
                             <li><a href="{% url 'products' %}?category=ceramics" class="dropdown-item">Ceramics</a></li>
                             <li><a href="{% url 'products' %}?category=glass" class="dropdown-item">Glass</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a href="{% url 'products' %}?category=ceramics,glass,jewellery" class="dropdown-item">All Products</a></li>
+                            <li><a href="{% url 'products' %}?category=ceramics,glass,jewellery" class="dropdown-item">All Products</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">

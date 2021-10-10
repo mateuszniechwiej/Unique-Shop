@@ -13,11 +13,19 @@
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                 {% else %}
-                    {% for colour in product.colour_set.all %}
-                    <a href="{{ colour.image.url}}" target="_blank">
-                        <img class="card-img-top img-fluid" src="{{ colour.image.url }}" alt="{{ colour.colour }}">
-                    </a>
-                    {% endfor %}
+                    
+                <div class="container">
+                    <div class="row justify-content-center">
+                        {% for colour in product.colour_set.all %}
+                        <div class="col-6">                      
+                                <a href="{{ colour.image.url}}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ colour.image.url }}" alt="{{ colour.colour }}" style="width: min-content;">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                    
                 {% endif %}
             </div>
         </div>
