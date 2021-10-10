@@ -25,6 +25,7 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     has_diff_colors = models.BooleanField(default=False, null=True, blank=True)
+    has_more_images= models.BooleanField(default=False, null=True, blank=True)
     description = models.TextField()
     price = MoneyField(max_digits=10, decimal_places=2, null=True, blank=True, default_currency='EUR')
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
