@@ -62,6 +62,7 @@ COLOURS_CHOICES = (
     ('blue', 'BLUE'),
     ('orange', 'ORANGE'),
     ('green', 'GREEN'),
+    ('black','BLACK')
 )
 
 class Colour(models.Model):

@@ -39,7 +39,7 @@
                     <form action="">
                         <select class='form-select' name="size" id="size">
                             {% for item in product.size_set.all %}
-                            <option value="{{ item.size|lower }}" {% if item.size == 'small' %}selected{% endif %}>{{ item.size|upper }} {{ item.price }}</option>
+                            <option value="{{ item.size|lower }}" {% if item.size == 'small' %}selected{% endif %}>{{ item.size|upper }} €{{ item.price }}</option>
                             {% endfor %}
                         </select>
                     </form>
