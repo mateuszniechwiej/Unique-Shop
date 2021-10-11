@@ -3,19 +3,78 @@
 
 {% block content %}
 <div class="container mt-5 mb-2">
-    <div class="row">
-        <div class="col mt-5">
+    <div class="row justify-content-center">
+        <div class="col-10 mt-5">
             <hr>
             <h2 class="logo-font mb-4">Shopping Cart</h2>
             <hr>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
+    <div class="row justify-content-center">
+        <div class="col-10">
             {% if cart_items %}
-                <div class="table-responsive rounded">
-                    {{ cart_items }}
+                <div class="table-responsive p-5">
+                    <table class="table caption-top">
+                        <thead>
+                          <tr>
+                            <th scope="col">Product Information</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for product in cart_items %}
+                                <tr>
+                                    <td class="p-2 w-25">
+                                        <img class="img-fluid" src="{{ product.product.image.url }}">
+                                        <p class="text-center"><strong>{{ product.product.name }}</strong></p>
+                                    </td>
+                                    <td>
+                                         
+                                    </td>
+                                    <td>
+                                        <p>{{ product.product.price }}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ product.item_qty }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: {% if delivery > 0 %} €{{ delivery|floatformat:2 }} {% else %} <strong>FREE</strong> {% endif %}
+
+                                    </h6>
+                                    <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                        <p class="mb-1 text-danger">
+                                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                        </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="btn btn-light btn-lg">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="" class="btn btn-dark btn-lg">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                      </table>
                 </div>
             {% else %}
                 <p class="lead mb-5">Your shopping cart is empty.</p>
