@@ -24,7 +24,19 @@ class CategoryAdmin(admin.ModelAdmin):
         'name'
     )
 
+class SizeAdmin(admin.ModelAdmin):
+    list_display = (
+        'product',
+        'size'
+    )
+
+class ColourAdmin(admin.ModelAdmin):
+    list_display = (
+        'product',
+        'colour'
+    )
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Size)
-admin.site.register(Colour)
+admin.site.register(Size, SizeAdmin)
+admin.site.register(Colour, ColourAdmin)
