@@ -26,7 +26,7 @@ class Product(models.Model):
     has_diff_colors = models.BooleanField(default=False, null=True, blank=True)
     has_more_images= models.BooleanField(default=False, null=True, blank=True)
     description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
@@ -49,7 +49,7 @@ class Size(models.Model):
     """
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     size = models.CharField(max_length=120, choices=SIZE_CHOICES, default='small')
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -59,7 +59,9 @@ class Size(models.Model):
 COLOURS_CHOICES = (
     ('red', 'RED'),
     ('yellow', 'YELLOW'),
-    ('blue', 'BLUE')
+    ('blue', 'BLUE'),
+    ('orange', 'ORANGE'),
+    ('green', 'GREEN'),
 )
 
 class Colour(models.Model):
