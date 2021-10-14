@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 if os.path.exists("env.py"):
     import env
 
@@ -48,6 +52,8 @@ INSTALLED_APPS = [
     'home',
     'products',
     'cart',
+    'multiselectfield',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -153,10 +159,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+cloudinary.config( 
+  cloud_name = "unique-shop", 
+  api_key = "764859756765848", 
+  api_secret = "GXoBqHdACjHdEW6gMxoo1JLmfNU",
+)
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

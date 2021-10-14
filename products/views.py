@@ -2,8 +2,21 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
+from .forms import PhotoForm
 
 # Create your views here.
+
+def upload(request):
+  context = dict( backend_form = PhotoForm())
+
+  if request.method == 'POST':
+    form = PhotoForm(request.POST, request.FILES)
+    context['posted'] = form.instance
+    if form.is_valid():
+        form.save()
+
+  return render(request, 'upload.html', context)
+
 
 def products(request):
     """
