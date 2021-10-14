@@ -8,57 +8,51 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-4 mt-5">
             <div class="image-product">
-                {% if not product.has_more_images %}
                     <a href="{{ product.image.url }}" target="_blank">
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
-                {% else %}
                     <div class="container">
                         <div class="row justify-content-center">
-                            {% for colour in product.colour_set.all %}
+                            {% for color in product.colors %}
                             <div class="col-6">                      
-                                    <a href="{{ colour.image.url}}" target="_blank">
-                                <img class="card-img-top img-fluid" src="{{ colour.image.url }}" alt="{{ colour.colour }}" style="width: min-content;">
+                                    <a href="{{ color.image.url}}" target="_blank">
+                                <img class="card-img-top img-fluid" src="{{ color.image.url }}" alt="{{ color.color }}" style="width: min-content;">
                                 </a>
                             </div>
                             {% endfor %}
                         </div>
                     </div>
-                    
-                {% endif %}
             </div>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-4 mt-2 mb-2">
             <div class="product-details">
-                <p>{{ product.name }}</p>
-                <p class="mt-3">{% if not product.has_sizes %}
-                    €{{ product.price }}
-                    {% else %}
-                    <form action="">
-                        <select class='form-select' name="size" id="size">
-                            {% for item in product.size_set.all %}
-                            <option value="{{ item.size|lower }}" {% if item.size == 'small' %}selected{% endif %}>{{ item.size|upper }} €{{ item.price }}</option>
-                            {% endfor %}
-                        </select>
-                    </form>
-                    {% endif %}
+                <p style="font-size: x-large;"><strong>{{ product.name }}</strong></p>
+                <p class="mt-3">
+                   <strong>Price:</strong> €{{ product.price }}
                 </p>
-                {% if product.has_diff_colors %}
-                <form action="">
-                    <select class='form-select' name="colour" id="colour">
-                        {% for item in product.colour_set.all %}
-                        <option value="{{ item.colour|lower }}" {% if item.colour == 'red' %}selected{% endif %}>{{ item.colour|upper }} </option>
-                        {% endfor %}
-                            
-                    </select>
-                </form>
+                {% if product.size %}
+                <p class="mt-3">
+                    <strong>Size:</strong> €{{ product.size }}
+                </p>
                 {% endif %}
                 <p class="mt-3">{{ product.description }}</p>
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
+                        <div class="col-12">
+                            <p class="mt-3"><strong>Colors:</strong></p>
+                            <div class="form-group">
+                                <div class="input-group">
+                                <select class='form-select' name="color" id="color">
+                                {% for color in product.colors %}
+                                    <option value="{{ color }}" >{{ color|upper }}</option>
+                                {% endfor %}
+                                </select>
+                                </div>    
+                            </div>
+                        </div>
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group">
@@ -68,13 +62,13 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-white rounded-0 mt-5">
+                            <a href="{% url 'products' %}" class="btn btn-light rounded-0 mt-5">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping with us!</span>
                             </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>

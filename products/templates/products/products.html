@@ -21,11 +21,7 @@
                             <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                         </a>
                     </p>
-                    {% if not product.has_sizes %}
-                    €{{ product.price }}
-                    {% else %}
-                        <p> From €{{ product.price }} </p>
-                    {% endif %}
+                        <p class="mt-1 mb-0"> €{{ product.price }} </p>
                 </div>
             </div>
         </div>
