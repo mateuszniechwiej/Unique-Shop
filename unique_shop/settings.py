@@ -175,6 +175,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-FREE_DELIVERY = 100
+FREE_DELIVERY = 60
 
 DELIVERY_FEE = 10

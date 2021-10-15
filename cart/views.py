@@ -15,15 +15,19 @@ def add_to_cart(request, item_id):
     """
 
     quantity = int(request.POST.get('quantity'))
-    color = request.POST['color']
+    color = request.POST.get('color', False)
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
+    # checking if item_id == key of cart item 
     if item_id in list(cart.keys()):
+        # if the item with that color already in cart then increment qty 
         if color in cart[item_id]['items_by_colors'].keys():
             cart[item_id]['items_by_colors'][color] += quantity
+        # else if the item color NOT in the cart set quantity equal to the amount selected to add to cart 
         else:
             cart[item_id]['items_by_colors'][color] = quantity
+    #if item not in the cart add item,color and qty to cart 
     else:
         cart[item_id] = {'items_by_colors': {color: quantity}}
 
