@@ -22,6 +22,7 @@
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
+                            <th scope="col">Color</th>
                           </tr>
                         </thead>
 
@@ -41,6 +42,11 @@
                                     <td>
                                         <p>{{ product.item_qty }}</p>
                                     </td>
+                                    {% if product.colors %}
+                                    <td>
+                                        <p>{{ product.colors }}</p>
+                                    </td>
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
                             <tr>

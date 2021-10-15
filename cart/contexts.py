@@ -13,13 +13,15 @@ def cart_contents(request):
 
     for item_id, item_qty in cart.items():
         product = get_object_or_404(Product, pk=item_id)
-        total += item_qty * product.price
-        product_count += item_qty
-        cart_items.append({
-            'item_id': item_id,
-            'item_qty': item_qty,
-            'product': product,
-        })
+        for colors, qty in item_qty['items_by_colors'].items():
+            total += qty * product.price
+            product_count += qty
+            cart_items.append({
+                'item_id': item_id,
+                'item_qty': item_qty,
+                'product': product,
+                'colors': colors,
+            })
 
     if total < settings.FREE_DELIVERY and total != 0:
         delivery = total + settings.DELIVERY_FEE

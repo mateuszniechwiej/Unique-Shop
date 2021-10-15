@@ -15,13 +15,17 @@ def add_to_cart(request, item_id):
     """
 
     quantity = int(request.POST.get('quantity'))
+    color = request.POST['color']
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
     if item_id in list(cart.keys()):
-        cart[item_id] += quantity
+        if color in cart[item_id]['items_by_colors'].keys():
+            cart[item_id]['items_by_colors'][color] += quantity
+        else:
+            cart[item_id]['items_by_colors'][color] = quantity
     else:
-        cart[item_id] = quantity
+        cart[item_id] = {'items_by_colors': {color: quantity}}
 
     request.session['cart'] = cart
     return redirect(redirect_url)
