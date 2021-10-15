@@ -52,7 +52,7 @@
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: {% if delivery > 0 %} €{{ delivery|floatformat:2 }} {% else %} <strong>FREE</strong> {% endif %}
+                                    <h6>Delivery: {% if total > free_delivery %} <strong>FREE</strong>  {% else %} €{{ delivery|floatformat:2 }}{% endif %}
 
                                     </h6>
                                     <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>

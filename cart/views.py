@@ -15,6 +15,7 @@ def add_to_cart(request, item_id):
     """
 
     quantity = int(request.POST.get('quantity'))
+    # https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it
     color = request.POST.get('color', False)
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})

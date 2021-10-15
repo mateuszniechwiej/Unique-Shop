@@ -32,8 +32,8 @@ def cart_contents(request):
                     'product': product,
                     'colors': colors,
                 })
-                
-    if total < FREE_DELIVERY and total != 0:
+
+    if (total < FREE_DELIVERY and total > 0):
         delivery = DELIVERY_FEE
         grand_total = total + delivery
     elif total == 0:
