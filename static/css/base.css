@@ -9,3 +9,6 @@ nav i {
     font-size: 1.2em;
 }
 
+.update-link, .remove-item  {
+    cursor: pointer;
+}
