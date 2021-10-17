@@ -88,6 +88,8 @@ TEMPLATES = [
     },
 ]
 
+MESSAGES_STORAGE = 'django.contrib.messages.storage.session.SessionStorage' # needed when using gitpod
+
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',

@@ -1,5 +1,8 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render, reverse
+from django.contrib import messages
+from products.models import Product
+
 
 # Create your views here.
 
@@ -14,7 +17,7 @@ def add_to_cart(request, item_id):
     """
     Add quantity of each product to the shopping cart
     """
-
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     # https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it
     color = request.POST.get('color', 'N/A')
@@ -26,12 +29,15 @@ def add_to_cart(request, item_id):
         # if the item with that color already in cart then increment qty 
         if color in cart[item_id]['items_by_colors'].keys():
             cart[item_id]['items_by_colors'][color] += quantity
+            messages.success(request, f'{product.name} added to your cart')
         # else if the item color NOT in the cart set quantity equal to the amount selected to add to cart 
         else:
             cart[item_id]['items_by_colors'][color] = quantity
+            messages.success(request, f'{product.name} added to your cart')
     #if item not in the cart add item,color and qty to cart 
     else:
         cart[item_id] = {'items_by_colors': {color: quantity}}
+        messages.success(request, f'{product.name} added to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
