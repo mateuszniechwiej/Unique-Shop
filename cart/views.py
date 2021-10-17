@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render, reverse
 
 # Create your views here.
@@ -56,3 +57,22 @@ def adjust_cart(request, item_id):
     
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
+
+
+def remove_from_cart(request, item_id):
+    """
+    Remove item from cart
+    """
+
+    try:
+        cart = request.session.get('cart', {})
+        color = request.POST.get('color', 'N/A')
+        
+        del cart[item_id]['items_by_colors'][color]
+        if not cart[item_id]['items_by_colors']:
+            cart.pop(item_id)                
+        
+        request.session['cart'] = cart
+        return HttpResponse(status=200)
+    except Exception as e:
+        return HttpResponse(status=500)
