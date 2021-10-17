@@ -11,19 +11,9 @@ def cart_contents(request):
     grand_total = 0
     cart = request.session.get('cart', {})
 
-    for item_id, item_qty in cart.items():
-        if isinstance(item_qty, int):
+    for item_id, quantity in cart.items():
             product = get_object_or_404(Product, pk=item_id)
-            total += item_qty * product.price
-            product_count += item_qty
-            cart_items.append({
-                'item_id': item_id,
-                'quantity': item_qty,
-                'product': product,
-            })
-        else:
-            product = get_object_or_404(Product, pk=item_id)
-            for colors, quantity in item_qty['items_by_colors'].items():
+            for colors, quantity in quantity['items_by_colors'].items():
                 total += quantity * product.price
                 product_count += quantity
                 cart_items.append({
