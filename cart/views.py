@@ -41,8 +41,9 @@ def adjust_cart(request, item_id):
     Adjust quantity of each product in the shopping cart
     """
     quantity = int(request.POST.get('quantity'))
-    color = request.POST.get('colors')
     cart = request.session.get('cart', {})
+    color = request.POST.get('items_by_colors')
+    print(cart)
     print(color)
     if quantity > 0:
         if item_id in list(cart.keys()):
