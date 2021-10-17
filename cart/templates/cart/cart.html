@@ -65,8 +65,15 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
+                                                <div hidden class="col-12">
                                                         <p class="mt-3"><strong>Colors:</strong></p>
+                                                        {% for color in product.colors.field.choices %}
+                                                            {% if product.colors != false %}
+                                                                <option selected>{{ color|upper }}</option>
+                                                            {% else %}
+                                                                <option>'N/A'</option>
+                                                            {% endif %}
+                                                            {% endfor %}
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                             <select class='form-select' name="color" id="color">
@@ -80,11 +87,11 @@
                                         <a class="update-link text-info"><small>Update</small></a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ product.item_id }}" data-colors="{{ product.colors }}"><small>Remove</small></a>
                                     </td>
-                                    <!-- {% if product.colors %}
+                                    {% if product.colors %}
                                     <td>
                                         <p>{% if product.colors != 'false' %} {{ product.colors|upper }}{% else %} N/A {% endif %}</p>
                                     </td>
-                                    {% endif %} -->
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
                             <tr>
