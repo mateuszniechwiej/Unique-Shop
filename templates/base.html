@@ -139,6 +139,11 @@
         $(document).ready(function () {
             $('.toast').show();
         });
+        $('.toast-close').each(function () {
+            $(this).click(function () {
+                $('.toast').hide();
+            });
+        });
     </script>
     {% endblock %}
 

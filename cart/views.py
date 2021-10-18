@@ -1,5 +1,5 @@
 from django.http.response import HttpResponse
-from django.shortcuts import redirect, render, reverse
+from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 from products.models import Product
 
@@ -17,7 +17,7 @@ def add_to_cart(request, item_id):
     """
     Add quantity of each product to the shopping cart
     """
-    product = Product.objects.get(pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     # https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it
     color = request.POST.get('color', 'N/A')
@@ -29,11 +29,11 @@ def add_to_cart(request, item_id):
         # if the item with that color already in cart then increment qty 
         if color in cart[item_id]['items_by_colors'].keys():
             cart[item_id]['items_by_colors'][color] += quantity
-            messages.success(request, f'{product.name} added to your cart')
+            messages.success(request, f'{product.name} - {color} quantity updated to {cart[item_id]["items_by_colors"][color]}')
         # else if the item color NOT in the cart set quantity equal to the amount selected to add to cart 
         else:
             cart[item_id]['items_by_colors'][color] = quantity
-            messages.success(request, f'{product.name} added to your cart')
+            messages.success(request, f'{product.name} - {color} added to your cart')
     #if item not in the cart add item,color and qty to cart 
     else:
         cart[item_id] = {'items_by_colors': {color: quantity}}
@@ -47,6 +47,7 @@ def adjust_cart(request, item_id):
     """
     Adjust quantity of each product in the shopping cart
     """
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
     color = request.POST.get('color', 'N/A')
@@ -56,10 +57,12 @@ def adjust_cart(request, item_id):
         if item_id in list(cart.keys()):
             if color in cart[item_id]['items_by_colors'].keys():
                 cart[item_id]['items_by_colors'][color] = quantity
+                messages.success(request, f'{product.name} added to your cart')
         else:
             del cart[item_id]['items_by_colors'][color]
             if not cart[item_id]['items_by_colors']:
-                cart.pop(item_id)                
+                cart.pop(item_id)
+                messages.success(request, 'Product removed from your shopping cart')                
     
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -76,9 +79,11 @@ def remove_from_cart(request, item_id):
         
         del cart[item_id]['items_by_colors'][color]
         if not cart[item_id]['items_by_colors']:
-            cart.pop(item_id)                
+            cart.pop(item_id)
+            messages.success(request, 'Product removed from your shopping cart')                
         
         request.session['cart'] = cart
         return HttpResponse(status=200)
     except Exception as e:
+        messages.error(request, f'Error removing product: {e}')
         return HttpResponse(status=500)
