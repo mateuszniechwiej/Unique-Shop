@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'cart',
     'multiselectfield',
     'cloudinary',
+    'checkout',
 ]
 
 MIDDLEWARE = [
