@@ -41,7 +41,7 @@ class Order(models.Model):
         accounting for delivery costs.
         """
         self.order_total = self.lineitems.aggregate(Sum(
-            'lineitem_total'))['lineitem_total__sum'] or 0
+            'lineitem_total'))['lineitem_total__sum']
         if self.order_total < settings.FREE_DELIVERY:
              self.delivery_cost = settings.DELIVERY_FEE
         else:
