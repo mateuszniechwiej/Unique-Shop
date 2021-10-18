@@ -2,6 +2,10 @@
 {% load static %}
 {% load cart_tools %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="container ">
     <div class="row ">
@@ -72,17 +76,17 @@
                 {{ order_form.street_address2 | as_crispy_field }}
                 {{ order_form.postcode | as_crispy_field }}
                 {{ order_form.phone_number | as_crispy_field }}
-                <div class="form-check form-check-inline >
+                <div class="form-check form-check-inline">
                     {% if user.is_autenticated %}
-                        <label class="form-check-label" for="id-save-info">Save delivery information</label>
+                        <label class= "form-check-label" for="id-save-info">Save delivery information</label>
                         <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info">
                     {% else %}
                         <label class="form-check-label " for="id-save-info">
                             <a href="{% url 'account_signup' %}">Register for an account</a>
                             <a href="{% url 'account_login' %}">Login</a> to save this information 
                         </label>
-                    {% endif %}
-                </div>
+                    </div>
+                {% endif %}
             </fieldset>
             <fieldset class="px-3">
                 <legend class="fieldset-label  text-black text-center ">Payment</legend>
@@ -115,4 +119,11 @@
     </div>
 </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

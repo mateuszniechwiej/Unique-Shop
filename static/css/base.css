@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Spirax&display=swap');
 
 nav {
-    font-family: 'Spirax', sans-serif;
+    font-family: 'Spirax', cursive;
     font-size: 1.3em;
 }
 
@@ -13,14 +13,3 @@ nav i {
     cursor: pointer;
 }
 
-
-/* -------------------------- Checkout  */
-
-#payment-form select,select option {
-    color:#000;
-} 
-
-#payment-form select:invalid,
-select option[value=""] {
-    color: #6c757d;
-}
