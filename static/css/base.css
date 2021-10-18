@@ -14,3 +14,13 @@ nav i {
 }
 
 
+/* -------------------------- Checkout  */
+
+#payment-form select,select option {
+    color:#000;
+} 
+
+#payment-form select:invalid,
+select option[value=""] {
+    color: #6c757d;
+}
