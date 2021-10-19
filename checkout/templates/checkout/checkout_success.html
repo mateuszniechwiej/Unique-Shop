@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container ">
+        <div class="row ">
+            <div class="col-10 mt-5">
+                <hr>
+                <h2 class="mt-5 mb-4 text-center">Thank you for your order</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12 col-lg-8">
+            </div>
+        </div>
+    </div>
+{% endblock %}
