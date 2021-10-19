@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xkfg+4-#pn-6syvaapw%5rlwyg849pa$3s#!$5mp8a#$lqo(b('
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -176,8 +176,8 @@ STATIC_URL = '/static/'
 
 cloudinary.config( 
   cloud_name = "unique-shop", 
-  api_key = "764859756765848", 
-  api_secret = "GXoBqHdACjHdEW6gMxoo1JLmfNU",
+  api_key = os.environ.get('API_KEY',''), 
+  api_secret = os.environ.get('API_SECRET','')
 )
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
@@ -189,6 +189,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-FREE_DELIVERY = 60
 
+#Stripe
+
+FREE_DELIVERY = 60
 DELIVERY_FEE = 10

@@ -1,3 +1,4 @@
+.env
 env
 core.Microsoft*
 core.mongo*
