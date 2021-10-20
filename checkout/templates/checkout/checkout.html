@@ -70,15 +70,15 @@
             </fieldset>
             <fieldset class="px-3 mb-1">
                 <legend class="fieldset-label small text-black w-auto">Delivery</legend>
-                {{ order_form.country | as_crispy_field }}
-                {{ order_form.town_or_city | as_crispy_field }}
                 {{ order_form.street_address1 | as_crispy_field }}
                 {{ order_form.street_address2 | as_crispy_field }}
+                {{ order_form.town_or_city | as_crispy_field }}
                 {{ order_form.postcode | as_crispy_field }}
-                {{ order_form.phone_number | as_crispy_field }}
+                {{ order_form.country | as_crispy_field }}
                 {{ order_form.county | as_crispy_field }}
+                {{ order_form.phone_number | as_crispy_field }}
                 <div class="form-check form-check-inline">
-                    {% if user.is_autenticated %}
+                    {% if user.is_authenticated %}
                         <label class= "form-check-label" for="id-save-info">Save delivery information</label>
                         <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info">
                     {% else %}

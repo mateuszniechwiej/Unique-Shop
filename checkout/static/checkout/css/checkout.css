@@ -31,12 +31,13 @@
 }
 
 #payment-form .form-control,
-#card-element {
+#div_id_country {
     color: #000;
     border: 1px solid #000;
 }
 
-select,select option {
+select,
+select option {
   color:#000;
 
 } 
@@ -44,5 +45,4 @@ select,select option {
 select:invalid,
 select option[value=""] {
   color: #adb5bd;
-  border: 1px solid #000;
 }
