@@ -31,7 +31,7 @@
 }
 
 #payment-form .form-control,
-#div_id_country {
+#card-element {
     color: #000;
     border: 1px solid #000;
 }
@@ -39,6 +39,7 @@
 select,
 select option {
   color:#000;
+  border: 1px solid #000 !important; 
 
 } 
 
