@@ -95,6 +95,8 @@
                 <div class="mb-3" id="card-element"></div>
                 <!-- Error display -->
                 <div class="mb-3 text-danger" id="card-error" role="alert"></div>
+                <input type="hidden" value="{{ client_secret }}" name="client_secret">
+
             </fieldset>
             <div class="submit-button text-center mt-5 mb-2">                    
                 <a href="{% url 'view_cart' %}" class="btn btn-outline-dark rounded-0">
