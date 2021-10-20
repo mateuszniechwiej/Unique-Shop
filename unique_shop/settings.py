@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+    'profiles',
+    ###################
     'multiselectfield',
     'cloudinary',
     'crispy_forms',
