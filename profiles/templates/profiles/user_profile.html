@@ -14,5 +14,21 @@
             <hr>
         </div>
     </div>
-    {{ user }}
+    <div class="row">
+        <div class="col">
+            <h3>Saved delivery info</h3>
+            <form action="{% url 'user_profile' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-dark" >Update User</button>
+            </form>
+        </div>
+        <div class="col">
+            <div class="col">
+                <h3>Order history</h3>
+                {{ orders }}
+            </div>
+        </div>
+    </div>
+    username: {{ profile }}
 {% endblock %}
