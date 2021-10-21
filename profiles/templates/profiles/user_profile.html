@@ -24,11 +24,40 @@
             </form>
         </div>
         <div class="col">
-            <div class="col">
                 <h3>Order history</h3>
-                {{ orders }}
-            </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Items</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}" title="
+                                    {{ order.order_number }}">{{ order.order_number|truncatechars:4 }}</a>
+                                </td>
+                                
+                                    <td>
+                                        <ul class="list-unstyled" style="display: inline-block">
+                                            {% for item in order.lineitems.all %}
+                                                <li>{{ item.product }}</li>
+                                                <li>{% if item.color != 'N/A' %}Colour: {{ item.color|upper }}{% endif %}</li>
+                                                <li>Qty: {{ item.quantity }}</li>
+                                                <hr>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>            
+                                                                
+                                <td>{{ order.grand_total }}</td>
+                                <td>{{ order.date }}</td>
+                            </tr>                        
+                        {% endfor %}
+                    </tbody>
         </div>
     </div>
-    username: {{ profile }}
 {% endblock %}
