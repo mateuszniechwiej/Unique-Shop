@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, Review
+from profiles.models import UserProfile
 from .forms import PhotoForm
 
 # Create your views here.
@@ -76,9 +77,25 @@ def product_details(request, product_id):
     """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter
+    print(reviews)
+
+    # Add review to the product 
+
+    if request.method == 'POST' and request.user.is_authenticated:
+        rate = request.POST.get('rate', 5)
+        comment = request.POST.get('comment','')
+        user = get_object_or_404(UserProfile, user=request.user)
+        
+
+        review = Review.objects.create(product=product, user=user, rate=rate, comment=comment)
+        
+        
+
 
     context = {
         'product': product,
+
     }
 
     return render(request, 'products/product_details.html', context)

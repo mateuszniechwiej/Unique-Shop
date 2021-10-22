@@ -82,25 +82,6 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>    
-                        <h2 class="review">Reviews</h2>
-                        <div class="review-wrapper">
-                            {% for review in reviews.all %}
-                                <div class="notification">
-                                    <p>
-                                        <strong>Date: </strong> {{ review.date_added|date:"d-m-Y" }}
-                                        <strong>Ratings :</strong> {{ review.rate }}
-                                    </p>
-
-                                    {{ review.comment }}
-                                </div>
-                            {% empty %}
-                                <div class="notification">
-                                    No reviews yet...
-                                </div>
-                            {% endfor %}
-                        </div>
-
                         <div class="col-12">
                             <a href="{% url 'products' %}" class="btn btn-light rounded-0 mt-5">
                                 <span class="icon">
@@ -113,6 +94,56 @@
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
+                <hr>    
+                <h2 class="review">Reviews</h2>
+                <div class="review-wrapper">
+                    {% for review in product.reviews.all %}
+                        <div class="notification mb-2" style="border: 1px solid black">
+                            <p>
+                                <strong>Date: </strong> {{ review.created_date|date:"d-m-Y" }} <br>
+                                <strong>Ratings :</strong> {{ review.rate }}
+                            </p>
+
+                            {{ review.comment }}
+                        </div>
+                    {% empty %}
+                        <div class="notification">
+                            No reviews yet...
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if request.user.is_authenticated %}
+                    <form method="POST" action="{% url 'product_details' product.id %}">                                
+                        {% csrf_token %}
+                        <div class="rate-field">
+                            <label for="">Rate</label>
+                            <div class="control">
+                                <div class ="select">
+                                    <select name="rate">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5" selected>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rate-field">
+                            <label for="">Comment</label>
+                            <div class="control">
+                                <textarea class="textarea" name="comment" id="" cols="80" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="rate-field">
+                            <div class="control">
+                                <button type="submit" class="btn btn-success">Submit Review</button>
+                            </div>
+                        </div>
+                    </form>
+                {% else %}
+                    <p>Pleas sign in to add review!</p>
+                {% endif %}
                 
             </div>
         </div>
