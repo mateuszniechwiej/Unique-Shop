@@ -78,36 +78,31 @@
                                                 <i class="fas fa-plus"></i>
                                             </span>
                                         </button>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-light rounded-0 mt-5">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping with us!</span>
-                            </a>
                             <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
                 <hr>    
-                <h2 class="review">Reviews</h2>
+                <h2 class="review text-center">Reviews</h2>
                 <div class="review-wrapper">
                     {% for review in product.reviews.all %}
-                        <div class="notification mb-2" style="border: 1px solid black">
+                        <div class="review-notification mb-2" >
                             <p>
                                 <strong>Date: </strong> {{ review.created_date|date:"d-m-Y" }} <br>
-                                <strong>Ratings :</strong> {{ review.rate }}
-                            </p>
+                            <p><strong>Rating :</strong> {{ review.rate }}/5</p>
+                            </p><strong>Comment:</strong> <br>  
 
                             {{ review.comment }}
                         </div>
                     {% empty %}
-                        <div class="notification">
+                        <div class="review-notification">
                             No reviews yet...
                         </div>
                     {% endfor %}
@@ -115,8 +110,8 @@
                 {% if request.user.is_authenticated %}
                     <form method="POST" action="{% url 'product_details' product.id %}">                                
                         {% csrf_token %}
-                        <div class="rate-field">
-                            <label for="">Rate</label>
+                        <div class="rate-field text-center">
+                            <label for=""><strong>Rate</strong></label>
                             <div class="control">
                                 <div class ="select">
                                     <select name="rate">
@@ -132,12 +127,18 @@
                         <div class="rate-field">
                             <label for="">Comment</label>
                             <div class="control">
-                                <textarea class="textarea" name="comment" id="" cols="80" rows="10"></textarea>
+                                <textarea class="textarea" name="comment" id=""></textarea>
                             </div>
                         </div>
                         <div class="rate-field">
+                            <a href="{% url 'products' %}" class="btn btn-light rounded-0 mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping with us!</span>
+                            </a>
                             <div class="control">
-                                <button type="submit" class="btn btn-success">Submit Review</button>
+                                <button type="submit" class="btn btn-dark">Submit Review</button>
                             </div>
                         </div>
                     </form>
@@ -154,5 +155,10 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 {% include 'products/includes/qty_script.html' %}
 {% endblock %}

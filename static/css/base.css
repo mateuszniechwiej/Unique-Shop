@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Spirax&display=swap');
 
-nav {
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+nav a {
     font-family: 'Spirax', cursive;
     font-size: 1.3em;
 }
@@ -12,4 +17,50 @@ nav i {
 .update-link, .remove-item  {
     cursor: pointer;
 }
+/*--------------------- Product Details */
+.review-notification {
+    background-color: #e0e1dd;
+    padding: 1em;
+    border:1px solid #467599;
+}
 
+.rate-field textarea {
+    width: 100%;
+}
+
+.rate-field select{
+    font-size: 1.5em;
+    padding: .2em;
+    background-color: #e0e1dd;
+    width: 30%;
+    align-items: center;
+    text-align: center;
+}
+
+.rate-field select::selection {
+    background-color: #467599;
+    border:1px solid #467599;
+}
+/*---------------------  Contact Form */
+.contact h1{
+    font-family: 'Spirax', cursive;
+}
+
+.contact label {
+    font-size: 1.3rem;
+    font-family: 'Open Sans', sans-serif;
+}
+.contact span {
+    display: none;
+}
+.contact-form {
+    background-color: #e0e1dd;
+    padding: 1em;
+    border: 1px solid #467599;
+}
+
+.btn-contact {
+    background-color: #467599;
+    color: #fdfdff;
+    font-weight: 600;
+}

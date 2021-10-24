@@ -78,7 +78,6 @@ def product_details(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter
-    print(reviews)
 
     # Add review to the product 
 
@@ -86,13 +85,8 @@ def product_details(request, product_id):
         rate = request.POST.get('rate', 5)
         comment = request.POST.get('comment','')
         user = get_object_or_404(UserProfile, user=request.user)
-        
-
         review = Review.objects.create(product=product, user=user, rate=rate, comment=comment)
-        
-        
-
-
+    
     context = {
         'product': product,
 

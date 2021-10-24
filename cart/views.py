@@ -51,8 +51,6 @@ def adjust_cart(request, item_id):
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
     color = request.POST.get('color', 'N/A')
-    print(cart)
-    print(color)
     if quantity > 0:
         if item_id in list(cart.keys()):
             if color in cart[item_id]['items_by_colors'].keys():

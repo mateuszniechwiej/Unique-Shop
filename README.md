@@ -238,7 +238,7 @@ Wireframes can be accessed :point_right: [here](wireframes/).
 ### Design
 
 #### Colour Scheme
-![Colour Pallette](wireframes/colours.png)
+![Colour Pallette](docs/wireframes/colours.png)
 
 #### Typography
 

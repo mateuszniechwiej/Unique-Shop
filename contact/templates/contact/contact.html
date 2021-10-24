@@ -3,18 +3,18 @@
 
 
 {% block content %}
-    <div class="container mt-5 pt-5" >
+    <div class="container mt-5 pt-5 contact" >
         <div class="row ">
             <div class="col-12 col-md-8 mt-5 offset-lg-2 text-center">
                 <h1 >Contact us</h1>
             </div>
-            <div class="col-12 col-md-8 mt-2 offset-lg-2" style="border: 1px solid #000; padding: 1em;">
+            <div class="col-12 col-md-8 mt-2 offset-lg-2 contact-form">
                 <form action="{% url 'contact' %}" method="POST">
                     {% csrf_token %}
                     {% for field in form %}
                         {{ field | as_crispy_field}}
                     {% endfor %}
-                    <input type="submit" value="Submit" class="btn btn-dark">
+                    <input type="submit" value="Submit" class="btn btn-contact">
                 </form>
             </div>    
         </div>
