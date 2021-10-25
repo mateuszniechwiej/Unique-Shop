@@ -7,7 +7,7 @@
 }
 nav a {
     font-family: 'Spirax', cursive;
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 nav i {
@@ -16,6 +16,13 @@ nav i {
 
 .update-link, .remove-item  {
     cursor: pointer;
+}
+/*---------------------- Home Page  */
+.caption {
+    color:#fff;
+    background-color:rgba(0,0,0,0.5);
+    margin-bottom: 3em;
+    padding: 1em;
 }
 /*--------------------- Product Details */
 .review-notification {
