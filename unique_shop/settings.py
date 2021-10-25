@@ -196,11 +196,11 @@ cloudinary.config(
 )
 
 if 'USE_AWS' in os.environ:
-    #cache control
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000',
-    }
+    # #cache control
+    # AWS_S3_OBJECT_PARAMETERS = {
+    #     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    #     'CacheControl': 'max-age=94608000',
+    # }
 
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'mn-unique-shop'
