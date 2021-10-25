@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     {% block meta %}
@@ -44,7 +44,7 @@
     <title>Unique Shop {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="logo" style="width: 100px;"></a>
@@ -146,17 +146,6 @@
 
     {% block content %}
     {% endblock %}
-    
-    <footer>
-        <div class="row mt-1" style="border: 1px solid black; padding-top: 1.5em;">
-            <div class="col-sm-0 col-md-4">
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <p class="text-center">Copyright &copy; Mateusz N</p>
-            </div>
-        </div>
-    </footer>
-
     {% block postloadjs %}
     <script>
         $(document).ready(function () {
