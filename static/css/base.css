@@ -122,30 +122,48 @@ border-radius: 0;}
     background-color: #467599;
     border:1px solid #467599;
 }
-/*---------------------  Contact Form */
-.contact h1{
+
+.sing-in-info {
+    font-size: 1.3em;
+    color: #000;
+    font-weight: 500;
+}
+/*---------------------  Forms */
+.allauth-container,
+.contact {
+    margin-top: 10em;
+}
+
+
+.contact h1,
+.allauth-form-inner-content h1{
     font-family: 'Spirax', cursive;
 }
 
-.contact label {
+.contact label,
+.allauth-form-inner-content label {
     font-size: 1.3rem;
     font-family: 'Open Sans', sans-serif;
 }
-.contact span {
+.contact span,
+.allauth-form-inner-content span {
     display: none;
 }
-.contact-form {
+.contact-form,
+.allauth-form-inner-content {
     background-color: #e0e1dd;
     padding: 1em;
     border: 1px solid #150578;
 }
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.allauth-form-inner-content input {
     border-radius: 0;
     border: 1px solid #150578;
 }
 
-.btn-contact {
+.btn-contact
+.allauth-form-inner-content {
     background-color: #fff;
     color: #150578;
 }
