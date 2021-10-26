@@ -39,7 +39,15 @@ nav i {
     background-color: #467599;
     color: #fff;
 }
-
+.btn-light-uq {
+    background-color: #fff;
+    color: #150578;
+    border: 1px solid #150578;
+}
+.btn-light-uq:hover {
+    background-color: #150578;
+    color: #fff;
+}
 .btn-uq {
     background-color: #000;
     color: #fff;
@@ -66,6 +74,16 @@ footer {
     color: #000;
     border-top:2px solid #150578;
 }
+/*---------------------- Checkout */
+.checkout-success {
+    background-color: #e0e1dd;
+    margin: 7em 0 3em 0;
+    padding: 1em;
+}
+/* .order-details p{
+    font-size: 1.6em;
+    font-weight: 500;
+} */
 /*---------------------- Home Page  */
 .caption {
     color:#fff;

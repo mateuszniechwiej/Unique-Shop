@@ -1,132 +1,156 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
+<!-- {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock %}
+{% endblock %} -->
 
 {% block content %}
-    <div class="container ">
-        <div class="row ">
-            <div class="col-10 mt-5">
+    <div class="container-fluid checkout-success text-center">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
                 <hr>
                 <h2 class="mt-5 mb-4 text-center">Thank you for your order</h2>
                 <hr>
             </div>
         </div>
         <div class="row ">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <h4>Order Number</h4>
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.order_number }}</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <h4>Order Date:</h4>
-                <p>{{ order.date }}</p>
+        <div class="row ">
+            <div class="col-12 col-lg-6">
+                <h4>Order Date</h4>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>{{ order.date }}}</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-8">
-                <h4>Order Details:</h4>
+            <div class="col-12">
+                <h1 class="text-center">Order Details:</h1>
             </div>
         </div>
-
         {% for product in order.lineitems.all %}
+
         <div class="row">
-            <div class="col-12 col-lg-8">
-                <p>{{ product.product.name }}{% if product.colors != 'false' %} Colour: {{ product.colors|upper }}{% else %}{% endif %}</p>
-                <p>{{ product.quantity }} {{ product.product.price }} each</p>
+            <div class="col-12 col-lg-6">
+                <p>{{ product.product.name }}{% if product.color != 'N/A' %} Colour: {{ product.color|upper }}
+                    {% else %} {% endif %}</p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>{{ product.quantity }} x {{ product.product.price }} each</p>
             </div>
         </div>
         {% endfor %}
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
-                <h4>Deliery details</h4>
+                <h2 class="text-center">Deliery details</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <h4>Name</h4>
+
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.full_name }}</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <h4>Address 1</h4>
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.street_address1 }}</p>
             </div>
         </div>
         {% if order.street_address2 %}
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <h4>Address 2</h4>
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.street_address2 }}</p>
             </div>
         </div>
         {% endif %}
         {% if order.county %}
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <h4>County</h4>
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.county }}</p>
             </div>
         </div>
         {% endif %}
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <h4>Town or City</h4>
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.town_or_city }}</p>
             </div>
         </div>
         {% if order.order.postcode %}
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <h4>Postal Code</h4>
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.postcode }}</p>
             </div>
         </div>
         {% endif %}
-        <div class="row">
-            <div class="col-12 col-lg-8">
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
                 <h4>Country</h4>
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.country }}</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-lg-8">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
                 <h4>Phone Number</h4>
+
+            </div>
+            <div class="col-12 col-lg-6">
                 <p>{{ order.phone_number }}</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <h4>Order Summary:</h4>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <h4>Order Total</h4>
                 <p>{{ order.order_total }}</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <h4>Grand Total</h4>
                 <p>{{ order.grand_total }}</p>
             </div>
         </div>
-        <div class="row">
-			<div class="col-12 col-lg-7 text-right">
-                    <a href="{% url 'user_profile' %}" class="btn btn-dark rounded-0 mx-2">
-                        <span class="icon mr-2">
-                            <i class="fas fa-angle-left"></i>
-                        </span>
-                        <span class="text-uppercase">Back to Profile</span>
-                    </a>
-			</div>
-		</div>
-
-
-    </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-12 col-lg-7 text-right">
+                <a href="{% url 'user_profile' %}" class="btn btn-large btn-uq rounded-0 mx-2">
+                    <span class="icon mr-2">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>    
 {% endblock %}
