@@ -29,6 +29,12 @@ nav i {
     border-radius: 0;
 }
 /*---------------------- Buttons */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
 .btn-home {
     background-color: #467599;
     color: #fff;
