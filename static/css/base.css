@@ -11,8 +11,11 @@ h1,h2,h3 {
 nav a {
     font-family: 'Spirax', cursive;
     font-size: 1.4em;
+    white-space: nowrap;
 }
-
+.nav-link {
+color: #000;
+}
 nav i {
     font-size: 1.2em;
 }
@@ -26,11 +29,26 @@ nav i {
     color: #fff;
 }
 
+.btn-uq {
+    background-color: #000;
+    color: #fff;
+}
+.btn-uq:hover {
+    background-color: #150578;
+    color: #fff;
+}
+.icons-uq:hover {
+    color: #150578;
+}
 /*---------------------- Base */
 .unique-navbar {
     background-color: #e0e1d0;
     color: #000;
     border-bottom: 1px solid #150578;
+}
+
+#logo {
+    width: 100px;
 }
 footer {
     background-color: #e0e1d0;
@@ -93,3 +111,9 @@ footer {
 }
 
 /*--------------------------- Media Queries*/
+
+@media screen and (max-width: 1046px) {
+    nav a {
+        font-size: 1.1em;
+    }
+}
