@@ -29,7 +29,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 mt-2 mb-2">
             <div class="product-details">
-                <p style="font-size: x-large;"><strong>{{ product.name }}</strong></p>
+                <h2 class="text-center"><strong>{{ product.name }}</strong></h2>
                 <p class="mt-3">
                    <strong>Price:</strong> €{{ product.price }}
                 </p>
@@ -45,8 +45,8 @@
                         <div class="col-12">
                         {% if product.colors %}
                             <p class="mt-3"><strong>Colors:</strong></p>
-                            <div class="form-group">
-                                <div class="input-group text-center w-50">
+                            <div class="form-group form-group-uq">
+                                <div class="input-group text-center ">
                                 <select class='form-select' name="color" id="color">
                                 {% for color in product.colors %}
                                     <option value="{{ color }}" >{{ color|upper }}</option>
@@ -58,7 +58,7 @@
                         {% endif %}
                         <div class="col-12 ">
                             <p class="mt-3 "><strong>Quantity:</strong></p>
-                            <div class="form-group w-50 text-center">
+                            <div class="form-group form-group-uq text-center">
                                 <div class="input-group ">
                                     <div class="input-group-prepend">
                                         <button class="decrement-qty btn btn-dark rounded-0" 
