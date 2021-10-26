@@ -5,6 +5,9 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
+h1,h2,h3 {
+    font-family: 'Spirax', cursive;
+}
 nav a {
     font-family: 'Spirax', cursive;
     font-size: 1.4em;
@@ -17,11 +20,28 @@ nav i {
 .update-link, .remove-item  {
     cursor: pointer;
 }
+/*---------------------- Buttons */
+.btn-home {
+    background-color: #467599;
+    color: #fff;
+}
+
+/*---------------------- Base */
+.unique-navbar {
+    background-color: #e0e1d0;
+    color: #000;
+    border-bottom: 1px solid #150578;
+}
+footer {
+    background-color: #e0e1d0;
+    color: #000;
+    border-top:2px solid #150578;
+}
 /*---------------------- Home Page  */
 .caption {
     color:#fff;
     background-color:rgba(0,0,0,0.5);
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     padding: 1em;
 }
 /*--------------------- Product Details */
@@ -71,3 +91,5 @@ nav i {
     color: #fdfdff;
     font-weight: 600;
 }
+
+/*--------------------------- Media Queries*/
