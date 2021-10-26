@@ -16,12 +16,17 @@ nav a {
 .nav-link {
 color: #000;
 }
+
 nav i {
     font-size: 1.2em;
 }
 
 .update-link, .remove-item  {
     cursor: pointer;
+}
+.form-uq,
+.form-uq select {
+    border-radius: 0;
 }
 /*---------------------- Buttons */
 .btn-home {
@@ -62,12 +67,37 @@ footer {
     margin-bottom: 2em;
     padding: 1em;
 }
+/*--------------------- Products */
+.card-uq {
+    border: 1px solid #150578;
+}
+.container-products {
+    margin-bottom: 6em;
+}
+.card-footer-uq {
+    background-color: #467599;
+    
+}
+.card-footer-uq p {
+    color: #fff;
+    text-decoration: double;
+}
+.card-footer:last-child {
+border-radius: 0;}
+
+.icons-category {
+    color: #000;
+}
+.icons-category:hover {
+    color: #fff;
+}
 /*--------------------- Product Details */
 .review-notification {
     background-color: #e0e1dd;
     padding: 1em;
     border:1px solid #467599;
 }
+
 
 .rate-field textarea {
     width: 100%;
@@ -101,13 +131,23 @@ footer {
 .contact-form {
     background-color: #e0e1dd;
     padding: 1em;
-    border: 1px solid #467599;
+    border: 1px solid #150578;
+}
+.contact-form input,
+.contact-form textarea {
+    border-radius: 0;
+    border: 1px solid #150578;
 }
 
 .btn-contact {
-    background-color: #467599;
-    color: #fdfdff;
-    font-weight: 600;
+    background-color: #fff;
+    color: #150578;
+}
+
+.btn-contact:hover {
+    background-color: #150578;
+    color: #fff;
+    font-weight: 500;
 }
 
 /*--------------------------- Media Queries*/
