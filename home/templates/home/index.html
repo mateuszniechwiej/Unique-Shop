@@ -54,9 +54,11 @@
                             Friday: 10.30am – 6.30pm <br>
                             Saturday: 10.30am – 6.30pm <br>
                             Sunday: 12.00pm – 6.00pm</h3>
-                        <a href="{% url 'account_login' %}" class="btn btn-uq rounded-0 mx-2">
-                            <span class="text-uppercase">Login</span>
-                        </a>
+
+                        {% if request.user.is_authenticated %}
+                        {% else %}
+                            <a href="{% url 'account_login' %}" class="btn btn-uq rounded-0 mx-2"><span class="text-uppercase">Register</span></a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
