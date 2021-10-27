@@ -119,6 +119,7 @@ class StripeWH_Handler:
                 for item_id, quantity in json.loads(cart).items():
                     order = Order.objects.create(
                         full_name=shipping_details.email,
+                        user_profile=profile,
                         phone_number=shipping_details.phone,
                         country=shipping_details.address.country,
                         postcode=shipping_details.address.postal_code,
