@@ -208,8 +208,17 @@ border-radius: 0;}
     color: #fff;
     font-weight: 500;
 }
-
-/*--------------------------- Media Queries*/
+/*--------------------------- Errors */
+a.error {
+    text-decoration: none;
+    color: #150578;
+    font-size: 1.5em;
+}
+a.error:hover {
+    font-size: 3em;
+    transition: 1s;
+}
+/*--------------------------- Media Queries */
 
 @media screen and (max-width: 1046px) {
     nav a {
