@@ -6,10 +6,11 @@
 {% endblock %} -->
 
 {% block content %}
-    <div class="container-fluid checkout-success text-center">
+
+    <div class="container">
+        <div class="checkout-success" style="margin:8em auto;">
         <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <hr>
+            <div class="col-4 text-center">
                 <h2 class="mt-5 mb-4 text-center">Thank you for your order</h2>
                 <hr>
             </div>
@@ -30,13 +31,13 @@
                 <p>{{ order.date }}}</p>
             </div>
         </div>
+        <hr>
         <div class="row">
-            <div class="col-12">
-                <h1 class="text-center">Order Details:</h1>
+            <div class="col-12 mt-2">
+                <h1 >Order Details:</h1>
             </div>
         </div>
         {% for product in order.lineitems.all %}
-
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p>{{ product.product.name }}{% if product.color != 'N/A' %} Colour: {{ product.color|upper }}
@@ -47,15 +48,15 @@
             </div>
         </div>
         {% endfor %}
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                <h2 class="text-center">Deliery details</h2>
+        <hr>
+        <div class="row ">
+            <div class="col-12 col-lg-8 mt-2">
+                <h2 >Deliery details</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
                 <h4>Name</h4>
-
             </div>
             <div class="col-12 col-lg-6">
                 <p>{{ order.full_name }}</p>
@@ -107,7 +108,6 @@
             </div>
         </div>
         {% endif %}
-        <hr>
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
                 <h4>Country</h4>
@@ -119,31 +119,31 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
                 <h4>Phone Number</h4>
-
             </div>
             <div class="col-12 col-lg-6">
                 <p>{{ order.phone_number }}</p>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                <h4>Order Summary:</h4>
+        <hr>
+        <div class="row ">
+            <div class="col-12 col-lg-8 mt-2">
+                <h2>Order Summary:</h2>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row ">
             <div class="col-12 col-lg-8">
                 <h4>Order Total</h4>
                 <p>{{ order.order_total }}</p>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row ">
             <div class="col-12 col-lg-8">
                 <h4>Grand Total</h4>
                 <p>{{ order.grand_total }}</p>
             </div>
         </div>
-        <div class="row justify-content-center mb-3">
-            <div class="col-12 col-lg-7 text-right">
+        <div class="row  mb-3 justify-content-center">
+            <div class="col-12 col-lg-7 text-center">
                 <a href="{% url 'user_profile' %}" class="btn btn-large btn-uq rounded-0 mx-2">
                     <span class="icon mr-2">
                         <i class="fas fa-angle-left"></i>
@@ -152,5 +152,6 @@
                 </a>
             </div>
         </div>
-    </div>    
+    </div>
+</div>
 {% endblock %}
