@@ -208,6 +208,10 @@ border-radius: 0;}
     color: #fff;
     font-weight: 500;
 }
+/* -------------------------- Toasts */
+.toast-container {
+    margin-top: 7em;
+}
 /*--------------------------- Errors */
 a.error {
     text-decoration: none;

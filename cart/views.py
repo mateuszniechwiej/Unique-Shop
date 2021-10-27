@@ -29,11 +29,11 @@ def add_to_cart(request, item_id):
         # if the item with that color already in cart then increment qty 
         if color in cart[item_id]['items_by_colors'].keys():
             cart[item_id]['items_by_colors'][color] += quantity
-            messages.success(request, f'{product.name} - {color} quantity updated to {cart[item_id]["items_by_colors"][color]}')
+            messages.success(request, f'{product.name} - colour: {color}. Quantity updated to {cart[item_id]["items_by_colors"][color]}')
         # else if the item color NOT in the cart set quantity equal to the amount selected to add to cart 
         else:
             cart[item_id]['items_by_colors'][color] = quantity
-            messages.success(request, f'{product.name} - {color} added to your cart')
+            messages.success(request, f'{product.name} - colour: {color} added to your cart')
     #if item not in the cart add item,color and qty to cart 
     else:
         cart[item_id] = {'items_by_colors': {color: quantity}}
