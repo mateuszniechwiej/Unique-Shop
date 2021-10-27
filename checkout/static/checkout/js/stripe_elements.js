@@ -29,11 +29,10 @@ card.addEventListener('change', function(event) {
             <span  role="alert">
                 <i class="far fa-times-circle"></i>
             </span>
-            <span>${event.error.message}</span>
-            `
+            <span>${event.error.message}</span>`;
         $(cardError).html(html);
     } else {
-        cardError.textContent = ''
+        cardError.textContent = '';
     }
 });
 
@@ -51,10 +50,10 @@ form.addEventListener('submit', function(ev) {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
-    }
+    };
     var url = '/checkout/cache_checkout_data/';
 
-    $.post(url, postData).done(function() {
+    $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
@@ -62,7 +61,7 @@ form.addEventListener('submit', function(ev) {
                     name: $.trim(form.full_name.value),
                     phone: $.trim(form.phone_number.value),
                     email: $.trim(form.email.value),
-                    address:{
+                    address: {
                         line1: $.trim(form.street_address1.value),
                         line2: $.trim(form.street_address2.value),
                         city: $.trim(form.town_or_city.value),
@@ -74,7 +73,7 @@ form.addEventListener('submit', function(ev) {
             shipping: {
                 name: $.trim(form.full_name.value),
                 phone: $.trim(form.phone_number.value),
-                address:{
+                address: {
                     line1: $.trim(form.street_address1.value),
                     line2: $.trim(form.street_address2.value),
                     city: $.trim(form.town_or_city.value),
@@ -83,7 +82,7 @@ form.addEventListener('submit', function(ev) {
                     state: $.trim(form.county.value),
                 }
             },
-        }).then(function(result) {
+        }).then(function (result) {
             if (result.error) {
                 var cardError = document.getElementById('card-error');
                 var html = `
@@ -93,7 +92,7 @@ form.addEventListener('submit', function(ev) {
                     <span>${result.error.message}</span>`;
                 $(cardError).html(html);
                 $('#payment-form').fadeToggle(100);
-                card.update({ 'disabled': false});
+                card.update({ 'disabled': false });
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
@@ -103,6 +102,5 @@ form.addEventListener('submit', function(ev) {
         });
     }).fail(function () {
         location.reload();
-    })
+    });
 });
-

@@ -5,17 +5,21 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
+
 h1,h2,h3 {
     font-family: 'Spirax', cursive;
 }
+
 hr {
     color: #000;
 }
+
 nav a {
     font-family: 'Spirax', cursive;
     font-size: 1.4em;
     white-space: nowrap;
 }
+
 .nav-link {
 color: #000;
 }
@@ -27,6 +31,7 @@ nav i {
 .update-link, .remove-item  {
     cursor: pointer;
 }
+
 .form-uq,
 .form-uq select {
     border-radius: 0;
@@ -39,27 +44,33 @@ nav i {
     display: none;
     z-index: 999;
 }
+
 .btn-home {
     background-color: #467599;
     color: #fff;
 }
+
 .btn-light-uq {
     background-color: #fff;
     color: #150578;
     border: 1px solid #150578;
 }
+
 .btn-light-uq:hover {
     background-color: #150578;
     color: #fff;
 }
+
 .btn-uq {
     background-color: #000;
     color: #fff;
 }
+
 .btn-uq:hover {
     background-color: #150578;
     color: #fff;
 }
+
 .icons-uq:hover {
     color: #150578;
 }
@@ -86,6 +97,7 @@ footer {
     padding: 1em;
     border: 1px solid #150578;
 }
+
 hr {
     color: #150578;
 }
@@ -100,17 +112,21 @@ hr {
 .card-uq {
     border: 1px solid #150578;
 }
+
 .container-products {
     margin-bottom: 6em;
 }
+
 .card-footer-uq {
     background-color: #467599;
     
 }
+
 .card-footer-uq p {
     color: #fff;
     text-decoration: double;
 }
+
 .card-footer:last-child {
 border-radius: 0;}
 
@@ -127,22 +143,25 @@ border-radius: 0;}
     padding: 1em;
     border: 1px solid #150578;
 }
+
 .product-details p {
     font-weight: 400;
     font-size: 1.2em;
 }
+
 .product-details p strong {
     font-size: 1.5em;
 }
+
 .form-group-uq {
     max-width: 10em;
 }
+
 .review-notification {
     background-color: #e0e1dd;
     padding: 1em;
     border:1px solid #467599;
 }
-
 
 .rate-field textarea {
     width: 100%;
@@ -171,11 +190,13 @@ border-radius: 0;}
 .table-uq {
     border-bottom: 2px solid #150578;
 }
+
 .table-uq a {
     text-decoration: none;
     color: #150578;
     font-size: 1.5em;
 }
+
 .table-uq a:hover {
     background-color: #150578;
     color: #fff;
@@ -183,12 +204,12 @@ border-radius: 0;}
     padding: .2em;
     border: 1px solid #000;
 }
+
 /*-------------------------  Forms */
 .allauth-container,
 .contact {
     margin-top: 10em;
 }
-
 
 .contact h1,
 .allauth-form-inner-content h1{
@@ -200,16 +221,19 @@ border-radius: 0;}
     font-size: 1.3rem;
     font-family: 'Open Sans', sans-serif;
 }
+
 .contact span,
 .allauth-form-inner-content span {
     display: none;
 }
+
 .contact-form,
 .allauth-form-inner-content {
     background-color: #e0e1dd;
     padding: 1em;
     border: 1px solid #150578;
 }
+
 .contact-form input,
 .contact-form textarea,
 .allauth-form-inner-content input {
@@ -238,6 +262,7 @@ a.error {
     color: #150578;
     font-size: 1.5em;
 }
+
 a.error:hover {
     font-size: 3em;
     transition: 1s;
