@@ -331,7 +331,9 @@ More info: [VSCode docs](https://code.visualstudio.com/docs/python/environments#
 ### Heroku Deployment
 
 ## Credits
-[codepen](https://codepen.io/michalwyrwa/pen/GBaPPj) - back to the top button. 
+[codepen](https://codepen.io/michalwyrwa/pen/GBaPPj) - back to the top button.
+[stackoverflow](https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it)- multiselect value
+[Twilo](# https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)-learn how to built contact form
 
 ### Code
 

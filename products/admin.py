@@ -3,6 +3,7 @@ from .models import Product, Category, Review
 
 # Register your models here.
 
+
 class ProductAdmin(admin.ModelAdmin):
     """
     Product admin
@@ -14,8 +15,8 @@ class ProductAdmin(admin.ModelAdmin):
         'price',
         'image',
     )
-
-    ordering = ('name',) #sorting by name
+    # Sorting by name
+    ordering = ('name',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -27,7 +28,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ReviewAdmin(admin.ModelAdmin):
     list_display = (
-        'user', 'product', 'created_date' 
+        'user', 'product', 'created_date'
     )
     readonly_fields = (
         'created_date',

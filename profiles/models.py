@@ -9,13 +9,15 @@ from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     """
-    User profile model to hold delivery informations 
+    User profile model to hold delivery informations
     and order history
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_phone_number = models.CharField(max_length=20, null=True, blank=True)
-    user_street_address1 = models.CharField(max_length=80, null=True, blank=True)
-    user_street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    user_street_address1 = models.CharField(max_length=80, null=True,
+                                            blank=True)
+    user_street_address2 = models.CharField(max_length=80, null=True,
+                                            blank=True)
     user_town_or_city = models.CharField(max_length=40, null=True, blank=True)
     user_county = models.CharField(max_length=80, null=True, blank=True)
     user_postcode = models.CharField(max_length=20, null=True, blank=True)
@@ -34,4 +36,3 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # for exisitings profile just save profile
     instance.userprofile.save()
-

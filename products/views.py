@@ -7,16 +7,20 @@ from .forms import PhotoForm
 
 # Create your views here.
 
+
 def upload(request):
-  context = dict( backend_form = PhotoForm())
+    """
+    Connecting to cloudinary to allow file upload
+    """
+    context = dict(backend_form=PhotoForm())
 
-  if request.method == 'POST':
-    form = PhotoForm(request.POST, request.FILES)
-    context['posted'] = form.instance
-    if form.is_valid():
-        form.save()
+    if request.method == 'POST':
+        form = PhotoForm(request.POST, request.FILES)
+        context['posted'] = form.instance
+        if form.is_valid():
+            form.save()
 
-  return render(request, 'upload.html', context)
+    return render(request, 'upload.html', context)
 
 
 def products(request):
@@ -27,7 +31,7 @@ def products(request):
     products = Product.objects.all()
     query = None
     category = None
-    sort= None
+    sort = None
     direction = None
 
     if request.GET:
@@ -39,9 +43,11 @@ def products(request):
             if 'q' in request.GET:
                 query = request.GET['q']
                 if not query:
-                    messages.error(request, "Ups, you didn't enter any search criteria!")
+                    messages.error(request,
+                                   "Ups, you didn't enter\
+                                   any search criteria!")
                     return redirect(reverse('products'))
-                
+
                 queries = Q(name__icontains=query) | Q(description__icontains=query)
                 products = products.filter(queries)
 
@@ -72,25 +78,26 @@ def products(request):
 
 
 def product_details(request, product_id):
-    """ 
+    """
     A view to show single product details
     """
 
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter
 
-    # Add review to the product 
-
+    # add review to the product
     if request.method == 'POST' and request.user.is_authenticated:
         rate = request.POST.get('rate', 5)
-        comment = request.POST.get('comment','')
-        user = get_object_or_404(UserProfile, user=request.user)
-        review = Review.objects.create(product=product, user=user, rate=rate, comment=comment)
-    
+        comment = request.POST.get('comment', '')
+        user = get_object_or_404(UserProfile,
+                                 user=request.user)
+        review = Review.objects.create(product=product,
+                                       user=user, rate=rate,
+                                       comment=comment)
+
     context = {
         'product': product,
 
     }
 
     return render(request, 'products/product_details.html', context)
-    

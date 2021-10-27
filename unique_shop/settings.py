@@ -104,8 +104,9 @@ TEMPLATES = [
         },
     },
 ]
+# needed when using gitpod
+MESSAGES_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-MESSAGES_STORAGE = 'django.contrib.messages.storage.session.SessionStorage' # needed when using gitpod
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -133,7 +134,7 @@ WSGI_APPLICATION = 'unique_shop.wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) 
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
         }
 else:
     DATABASES = {
@@ -142,8 +143,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -187,14 +186,14 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-cloudinary.config( 
-  cloud_name = "unique-shop", 
-  api_key = os.environ.get('API_KEY',''), 
-  api_secret = os.environ.get('API_SECRET','')
+cloudinary.config(
+    cloud_name="unique-shop",
+    api_key=os.environ.get('API_KEY', ''),
+    api_secret=os.environ.get('API_SECRET', '')
 )
 
 if 'USE_AWS' in os.environ:
-    #cache control
+    # cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
@@ -207,7 +206,7 @@ if 'USE_AWS' in os.environ:
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-    #Static and media files
+    # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
@@ -224,7 +223,7 @@ if 'USE_AWS' in os.environ:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#Stripe
+# Stripe
 
 FREE_DELIVERY = 60
 DELIVERY_FEE = 10

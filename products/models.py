@@ -4,7 +4,7 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 from django.forms import ModelForm
 
-from profiles.models import UserProfile 
+from profiles.models import UserProfile
 
 
 class Photo(models.Model):
@@ -30,15 +30,16 @@ class Category(models.Model):
 
 class Product(models.Model):
     COLORS_CHOICES = (
-    ('red', 'RED'),
-    ('yellow', 'YELLOW'),
-    ('blue', 'BLUE'),
-    ('orange', 'ORANGE'),
-    ('green', 'GREEN'),
-    ('black','BLACK')
+        ('red', 'RED'),
+        ('yellow', 'YELLOW'),
+        ('blue', 'BLUE'),
+        ('orange', 'ORANGE'),
+        ('green', 'GREEN'),
+        ('black', 'BLACK')
     )
 
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True,
+                                 blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     colors = MultiSelectField(choices=COLORS_CHOICES, null=True, blank=True)
@@ -56,8 +57,11 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    product = models.ForeignKey(Product,null=True, blank=True, related_name='reviews', on_delete=models.SET_NULL)
-    user = models.ForeignKey(UserProfile, related_name='reviews', on_delete=models.CASCADE)
-    comment = models.TextField(max_length=250) 
+    product = models.ForeignKey(Product, null=True, blank=True,
+                                related_name='reviews',
+                                on_delete=models.SET_NULL)
+    user = models.ForeignKey(UserProfile, related_name='reviews',
+                             on_delete=models.CASCADE)
+    comment = models.TextField(max_length=250)
     rate = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
