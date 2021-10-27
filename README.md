@@ -1,8 +1,13 @@
 # Unique Shop
 
 This project is an e-commerce website created for Milestone Project 4("Code Institute").
-UNIQUE Crafts & Design is a shop selling handcrafted items. Located in Geroge's Street Arcade 
-in Dublin city centre.
+UNIQUE Crafts & Design is a shop selling handcrafted items. Located in Geroge's Street Arcade in Dublin city centre.
+
+![Unique Shop](docs/mockup.PNG)
+
+:globe_with_meridians:[Live website](https://mn-unique-shop.herokuapp.com/)
+
+:page_facing_up:[GitHub repository](https://github.com/mateuszniechwiej/unique_shop)
 
 # Table of Contest
 
@@ -231,14 +236,61 @@ A solution to satisfy user requirements:
 ## The Skeleton Plane
 
 ### _Wireframes_
-Wireframes can be accessed :point_right: [here](wireframes/).
+<details>
+<summary>Home</summary>
+<img src="docs/wireframes/home.png">
+</details>
+<details>
+<summary>Login</summary>
+<img src="docs/wireframes/login.png">
+</details>
+<details>
+<summary>About Us</summary>
+<img src="docs/wireframes/about_us.png">
+</details>
+<details>
+<summary>Account Details</summary>
+<img src="docs/wireframes/account_details.png">
+</details>
+<details>
+<summary>Account Order</summary>
+<img src="docs/wireframes/account_orders.png">
+</details>
+<details>
+<summary>Order</summary>
+<img src="docs/wireframes/order.png">
+</details>
+<details>
+<summary>Cart</summary>
+<img src="docs/wireframes/cart.png">
+</details>
+<details>
+<summary>Checkout</summary>
+<img src="docs/wireframes/checkout.png">
+</details>
+<details>
+<summary>Login</summary>
+<img src="docs/wireframes/login.png">
+</details>
+<details>
+<summary>Product Details</summary>
+<img src="docs/wireframes/product_details.png">
+</details>
+<details>
+<summary>Register</summary>
+<img src="docs/wireframes/register.png">
+</details>
+<details>
+<summary>Review</summary>
+<img src="docs/wireframes/review.png">
+</details>
 
 ## The Surface Plane
 
 ### Design
 
 #### Colour Scheme
-![Colour Pallette](docs/wireframes/colours.png)
+![Colour Pallette](docs/colours.png)
 
 #### Typography
 
@@ -287,7 +339,8 @@ This combination works well with this shop selling uniquely designed handmade pr
 * [JIRA](https://www.atlassian.com/software/jira) - project management tool to organize workflow.
 * [Balsamiq](https://balsamiq.com/) - to create wireframes
 * [techsini](https://techsini.com/) - to generate website mock-up.
-* [Google Fonts](https://fonts.google.com/) - 
+* [dbdiagram](https://dbdiagram.io/) - to create data base diagram.
+* [Google Fonts](https://fonts.google.com/) - to import fonts for this site
 * [Font Awesome](https://fontawesome.com/) - for social media links and forms icons.
 * [Heroku](https://heroku.com) - Heroku was to deploy and host the live website.
 * [Visual Studio Code](https://code.visualstudio.com/) - used for developing this website and commit the project to GitHub repository.
