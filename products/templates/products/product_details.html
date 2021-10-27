@@ -4,153 +4,151 @@
 
 
 {% block content %}
-<main class="flex-shrink-0">
-<div class="container-fluid mt-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 col-lg-4 mt-5">
-            <div class="image-product">
-                    <a href="{{ product.image.url }}" target="_blank">
-                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    </a>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            {% for color in product.colors %}
-                            <div class="col-6">                      
-                                    <a href="{{ color.image.url}}" target="_blank">
-                                <img class="card-img-top img-fluid" src="{{ color.image.url }}" alt="{{ color.color }}" style="width: min-content;">
-                                </a>
+    <main class="flex-shrink-0">
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 mt-5">
+                <div class="image-product">
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                {% for color in product.colors %}
+                                    <div class="col-6">                      
+                                            <a href="{{ color.image.url}}" target="_blank">
+                                        <img class="card-img-top img-fluid" src="{{ color.image.url }}" alt="{{ color.color }}" style="width: min-content;">
+                                        </a>
+                                    </div>
+                                {% endfor %}
                             </div>
-                            {% endfor %}
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 mt-2 mb-2">
-            <div class="product-details">
-                <h2 class="text-center"><strong>{{ product.name }}</strong></h2>
-                <p class="mt-3">
-                   <strong>Price:</strong> €{{ product.price }}
-                </p>
-                {% if product.size %}
-                <p class="mt-3">
-                    <strong>Size:</strong> {{ product.size }}
-                </p>
-                {% endif %}
-                <p class="mt-3">{{ product.description }}</p>
-                <form class="form form-uq" action="{% url 'add_to_cart' product.id %}" method="POST">
-                    {% csrf_token %}
-                    <div class="form-row">
-                        <div class="col-12">
-                        {% if product.colors %}
-                            <p class="mt-3"><strong>Colors:</strong></p>
-                            <div class="form-group form-group-uq">
-                                <div class="input-group text-center ">
-                                <select class='form-select' name="color" id="color">
-                                {% for color in product.colors %}
-                                    <option value="{{ color }}" >{{ color|upper }}</option>
-                                {% endfor %}
-                                </select>
-                                </div>    
-                            </div>                        
-                        </div>
-                        {% endif %}
-                        <div class="col-12 ">
-                            <p class="mt-3 "><strong>Quantity:</strong></p>
-                            <div class="form-group form-group-uq text-center">
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <button class="decrement-qty btn btn-dark rounded-0" 
-                                            data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                            <span class="icon">
-                                                <i class="fas fa-minus"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                     <input class="form-control qty_input text-center w-50" type="number"
-                                        name="quantity" value="1" min="1" max="99"
-                                        data-item_id="{{ product.id }}"
-                                        id="id_qty_{{ product.id }}">
-                                    <div class="input-group-append text-center">
-                                        <button class="increment-qty btn btn-light rounded-0"
-                                            data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                            <span class="icon">
-                                                <i class="fas fa-plus"></i>
-                                            </span>
-                                        </button>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5" value="Add to Bag">
-                        </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    </div>
-                </form>
-                <hr>    
-                <h2 class="review text-center">Reviews</h2>
-                <div class="review-wrapper">
-                    {% for review in product.reviews.all %}
-                        <div class="review-notification mb-2" >
-                            <p>
-                                <strong>Date: </strong> {{ review.created_date|date:"d-m-Y" }} <br>
-                            <p><strong>Rating :</strong> {{ review.rate }}/5</p>
-                            </p><strong>Comment:</strong> <br>  
-
-                            {{ review.comment }}
-                        </div>
-                    {% empty %}
-                        <div class="review-notification">
-                            No reviews yet...
-                        </div>
-                    {% endfor %}
-                </div>
-                {% if request.user.is_authenticated %}
-                    <form method="POST" action="{% url 'product_details' product.id %}">                                
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 mt-2 mb-2">
+                <div class="product-details">
+                    <h2 class="text-center"><strong>{{ product.name }}</strong></h2>
+                    <p class="mt-3">
+                    <strong>Price:</strong> €{{ product.price }}
+                    </p>
+                    {% if product.size %}
+                        <p class="mt-3">
+                            <strong>Size:</strong> {{ product.size }}
+                        </p>
+                    {% endif %}
+                    <p class="mt-3">{{ product.description }}</p>
+                    <form class="form form-uq" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
-                        <div class="rate-field text-center">
-                            <label for=""><strong>Rate</strong></label>
-                            <div class="control">
-                                <div class ="select">
-                                    <select name="rate">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5" selected>5</option>
+                        <div class="form-row">
+                            <div class="col-12">
+                            {% if product.colors %}
+                                <p class="mt-3"><strong>Colors:</strong></p>
+                                <div class="form-group form-group-uq">
+                                    <div class="input-group text-center ">
+                                    <select class='form-select' name="color" id="color">
+                                    {% for color in product.colors %}
+                                        <option value="{{ color }}" >{{ color|upper }}</option>
+                                    {% endfor %}
                                     </select>
+                                    </div>    
+                                </div>                        
+                            </div>
+                            {% endif %}
+                            <div class="col-12 ">
+                                <p class="mt-3 "><strong>Quantity:</strong></p>
+                                <div class="form-group form-group-uq text-center">
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-dark rounded-0" 
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input text-center w-50" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ product.id }}"
+                                            id="id_qty_{{ product.id }}">
+                                        <div class="input-group-append text-center">
+                                            <button class="increment-qty btn btn-light rounded-0"
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                            
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="rate-field">
-                            <label for="">Comment</label>
-                            <div class="control">
-                                <textarea class="textarea" name="comment" id=""></textarea>
+                            <div class="col-12">
+                                <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
-                        </div>
-                        <div class="rate-field">
-                            <a href="{% url 'products' %}" class="btn btn-light rounded-0 mt-5">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping with us!</span>
-                            </a>
-                            <div class="control">
-                                <button type="submit" class="btn btn-dark">Submit Review</button>
-                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-                {% else %}
-                    <p class="sing-in-info">Please sign in <a href="{% url 'account_login' %}">here</a> to add review!</p>
-                {% endif %}
-                
+                    <hr>    
+                    <h2 class="review text-center">Reviews</h2>
+                    <div class="review-wrapper">
+                        {% for review in product.reviews.all %}
+                            <div class="review-notification mb-2" >
+                                <p><strong>Date: </strong> {{ review.created_date|date:"d-m-Y" }} <br>
+                                <p><strong>Rating :</strong> {{ review.rate }}/5</p> <br>
+                                <p><strong>Comment:</strong></p> <br>  
+                                {{ review.comment }} 
+                            </div>
+                        {% empty %}
+                            <div class="review-notification">
+                                No reviews yet...
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% if request.user.is_authenticated %}
+                        <form method="POST" action="{% url 'product_details' product.id %}">                                
+                            {% csrf_token %}
+                            <div class="rate-field text-center">
+                                <label for="rate"><strong>Rate</strong></label>
+                                <div class="control">
+                                    <div class ="select">
+                                        <select name="rate" id="rate">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rate-field">
+                                <label for="comment">Comment</label>
+                                <div class="control">
+                                    <textarea class="textarea" name="comment" id="comment"></textarea>
+                                </div>
+                            </div>
+                            <div class="rate-field">
+                                <a href="{% url 'products' %}" class="btn btn-light rounded-0 mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping with us!</span>
+                                </a>
+                                <div class="control">
+                                    <button type="submit" class="btn btn-dark">Submit Review</button>
+                                </div>
+                            </div>
+                        </form>
+                    {% else %}
+                        <p class="sing-in-info">Please sign in <a href="{% url 'account_login' %}">here</a> to add review!</p>
+                    {% endif %}
+                    
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 {% include 'includes/footer.html' %}
 {% endblock %}
@@ -158,10 +156,10 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
-    }
-</script>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 {% include 'products/includes/qty_script.html' %}
 {% endblock %}

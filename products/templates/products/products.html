@@ -2,33 +2,33 @@
 {% load static %}
 
 {% block content %}
-<main class="flex-shrink-0 ">
-<div class="container container-products mt-5">
-    <div class="row mt-5 ">
-        {% for product in products %}
-        <div class="col-sm-6 col-lg-4 col-xl-3 mt-5">
-            <div class="card card-uq h-100 mt-5 rounded-0">
-                {% if product.image %}
-                <a href="{% url 'product_details' product.id %}">
-                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                </a>
-                {% endif %}
-                <div class="card-body">
-                    <p class="mb-0">{{ product.name }}</p>
-                </div>
-                <div class="card-footer card-footer-uq text-center">
-                    <p class="small mt-1 mb-0">
-                        <a class="icons-category" href="{% url 'products' %}?category={{ product.category.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                        </a>
-                    </p>
-                        <p class="mt-1 mb-0"> <strong>€{{ product.price }}</strong></p>
-                </div>
+    <main class="flex-shrink-0 ">
+        <div class="container container-products mt-5">
+            <div class="row mt-5 ">
+                {% for product in products %}
+                    <div class="col-sm-6 col-lg-4 col-xl-3 mt-5">
+                        <div class="card card-uq h-100 mt-5 rounded-0">
+                            {% if product.image %}
+                                <a href="{% url 'product_details' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            {% endif %}
+                            <div class="card-body">
+                                <p class="mb-0">{{ product.name }}</p>
+                            </div>
+                            <div class="card-footer card-footer-uq text-center">
+                                <p class="small mt-1 mb-0">
+                                    <a class="icons-category" href="{% url 'products' %}?category={{ product.category.name }}">
+                                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                    </a>
+                                </p>
+                                <p class="mt-1 mb-0"> <strong>€{{ product.price }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
-    </div>
-</div>
-</main>
-{% include 'includes/footer.html' %}
+    </main>
+    {% include 'includes/footer.html' %}
 {% endblock %}

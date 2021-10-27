@@ -3,21 +3,21 @@
 
 
 {% block content %}
-<main class="flex-shrink-0">
-    <div class="container contact" >
-        <div class="row ">
-            <div class="col-12 col-md-8 mt-2 offset-lg-2 contact-form">
-                <h1 class="text-center">Contact us</h1>
-                <form action="{% url 'contact' %}" method="POST">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {{ field | as_crispy_field}}
-                    {% endfor %}
-                    <input type="submit" value="Submit" class="btn btn-contact">
-                </form>
-            </div>    
+    <main class="flex-shrink-0">
+        <div class="container contact" >
+            <div class="row ">
+                <div class="col-12 col-md-8 mt-2 offset-lg-2 contact-form">
+                    <h1 class="text-center">Contact us</h1>
+                    <form action="{% url 'contact' %}" method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {{ field | as_crispy_field}}
+                        {% endfor %}
+                        <input type="submit" value="Submit" class="btn btn-contact">
+                    </form>
+                </div>    
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 {% include 'includes/footer.html' %}
- {% endblock %}
+{% endblock %}

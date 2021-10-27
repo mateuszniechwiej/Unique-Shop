@@ -6,58 +6,59 @@
 {% endblock %}
 
 {% block content %}
-<div class="container ">
-    <div class="row ">
-        <div class="col-10 mt-5">
-            <hr>
-            <h2 class="mt-5 mb-4 text-center">My Profile</h2>
-            <hr>
+    <div class="container ">
+        <div class="row ">
+            <div class="col-10 mt-5">
+                <hr>
+                <h2 class="mt-5 mb-4 text-center">My Profile</h2>
+                <hr>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h3>Saved delivery info</h3>
-            <form action="{% url 'user_profile' %}" method="POST" id="profile-update-form">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button class="btn btn-uq rounded-0" >Update User </button>
-            </form>
-        </div>
-        <div class="col">
+        <div class="row">
+            <div class="col">
+                <h3>Saved delivery info</h3>
+                <form action="{% url 'user_profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-uq rounded-0">Update User </button>
+                </form>
+            </div>
+            <div class="col">
                 <h3>Order history</h3>
                 <table class="table table-uq">
                     <thead>
-                      <tr>
-                        <th scope="col">Order Number</th>
-                        <th scope="col">Items</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Date</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">Order Number</th>
+                            <th scope="col">Items</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Date</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {% for order in orders %}
                             <tr>
                                 <td>
                                     <a href="{% url 'order_history' order.order_number %}" title="
-                                    {{ order.order_number }}">{{ order.order_number|truncatechars:4 }}</a>
+                                            {{ order.order_number }}">{{ order.order_number|truncatechars:4 }}</a>
                                 </td>
-                                
-                                    <td>
-                                        <ul class="list-unstyled" style="display: inline-block">
-                                            {% for item in order.lineitems.all %}
-                                                <li>{{ item.product }}</li>
-                                                <li>{% if item.color != 'N/A' %}Colour: {{ item.color|upper }}{% endif %}</li>
-                                                <li>Qty: {{ item.quantity }}</li>
-                                                <hr>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>            
-                                                                
+
+                                <td>
+                                    <ul class="list-unstyled" style="display: inline-block">
+                                        {% for item in order.lineitems.all %}
+                                            <li>{{ item.product }}</li>
+                                            <li>{% if item.color != 'N/A' %}Colour: {{ item.color|upper }}{% endif %}</li>
+                                            <li>Qty: {{ item.quantity }}</li>
+                                            <hr>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+
                                 <td>{{ order.grand_total }}</td>
                                 <td>{{ order.date }}</td>
-                            </tr>                        
+                            </tr>
                         {% endfor %}
                     </tbody>
+            </div>
         </div>
     </div>
 {% endblock %}

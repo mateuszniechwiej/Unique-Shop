@@ -3,93 +3,90 @@
 
 {% include 'includes/navbar.html' %}
 {% block content %}
-<main class="flex-shrink-0">
-        <div id="carouselUnique" class="carousel carousel-dark slide carousel-fade mt-5" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselUnique" data-bs-slide-to="0" class="active" aria-current="true"
-                    aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselUnique" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselUnique" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="{% static 'img/store.png' %}" class="d-block w-100" alt="shop photo">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h4 class="caption">Our History
-                            UNIQUE Crafts & Design was established by 2 friends, Kate and Magdalena, who shared the same passion
-                            for original designed handcrafts.
-                            <hr>
-                            What has been a dream for them for years, in July 2010 they set up a shop in Dublin city centre, in
-                            George’s Street Arcade, Ireland’s first purpose shopping centre and one of Europe’s oldest city
-                            markets.
-                            <hr>
-                            Unique is a small business that prides itself on delivering beautiful, colourful handcrafted items
-                            at affordable prices promoting at the same time many creative multi talented individuals living in
-                            Ireland
-                        </h4>
-                        <a href="{% url 'products' %}" class="btn btn-uq rounded-0 mx-2">
-                            <span class="text-uppercase">Our Products</span>
-                        </a>
-                    </div>
+    <main class="flex-shrink-0">
+            <div id="carouselUnique" class="carousel carousel-dark slide carousel-fade mt-5" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselUnique" data-bs-slide-to="0" class="active" aria-current="true"
+                        aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselUnique" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselUnique" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="{% static 'img/store2.jpg' %}" class="d-block w-100" alt="shop photo">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 class="caption">Our shop is located in the George’s Street Arcade, Dublin’s first purpose built
-                            Victorian Shopping Centre (1881), and one of Europe’s oldest, located in the heart of Dublin city
-                            centre in the cultural quarter area.</h3>
-                        <a href="{% url 'contact' %}" class="btn btn-uq rounded-0 mx-2">
-                            <span class="text-uppercase">Contact Us</span>
-                        </a>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="{% static 'img/store.png' %}" class="d-block w-100" alt="shop photo">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4 class="caption">Our History
+                                UNIQUE Crafts & Design was established by 2 friends, Kate and Magdalena, who shared the same passion
+                                for original designed handcrafts. <br>
+                                What has been a dream for them for years, in July 2010 they set up a shop in Dublin city centre, in
+                                George’s Street Arcade, Ireland’s first purpose shopping centre and one of Europe’s oldest city
+                                markets.<br>
+                                Unique is a small business that prides itself on delivering beautiful, colourful handcrafted items
+                                at affordable prices promoting at the same time many creative multi talented individuals living in
+                                Ireland
+                            </h4>
+                            <a href="{% url 'products' %}" class="btn btn-uq rounded-0 mx-2">
+                                <span class="text-uppercase">Our Products</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'img/store3.jpg' %}" class="d-block w-100" alt="shop photo">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 class="caption">Our Opening Hours <br>
-                            Monday: 10.30am – 6.30pm <br>
-                            Tuesday: 10.30am – 6.30pm <br>
-                            Wednesday: 10.30am – 6.30pm <br>
-                            Thursday: 10.30am – 7.00pm <br>
-                            Friday: 10.30am – 6.30pm <br>
-                            Saturday: 10.30am – 6.30pm <br>
-                            Sunday: 12.00pm – 6.00pm</h3>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="{% static 'img/store2.jpg' %}" class="d-block w-100" alt="shop photo">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="caption">Our shop is located in the George’s Street Arcade, Dublin’s first purpose built
+                                Victorian Shopping Centre (1881), and one of Europe’s oldest, located in the heart of Dublin city
+                                centre in the cultural quarter area.</h3>
+                            <a href="{% url 'contact' %}" class="btn btn-uq rounded-0 mx-2">
+                                <span class="text-uppercase">Contact Us</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/store3.jpg' %}" class="d-block w-100" alt="shop photo">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="caption">Our Opening Hours <br>
+                                Monday: 10.30am – 6.30pm <br>
+                                Tuesday: 10.30am – 6.30pm <br>
+                                Wednesday: 10.30am – 6.30pm <br>
+                                Thursday: 10.30am – 7.00pm <br>
+                                Friday: 10.30am – 6.30pm <br>
+                                Saturday: 10.30am – 6.30pm <br>
+                                Sunday: 12.00pm – 6.00pm</h3>
 
-                        {% if request.user.is_authenticated %}
-                        {% else %}
-                            <a href="{% url 'account_login' %}" class="btn btn-uq rounded-0 mx-2"><span class="text-uppercase">Register</span></a>
-                        {% endif %}
+                            {% if request.user.is_authenticated %}
+                            {% else %}
+                                <a href="{% url 'account_login' %}" class="btn btn-uq rounded-0 mx-2"><span class="text-uppercase">Register</span></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnique" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselUnique" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="container collections">
+                <div class="row">
+                    <div class="col-lg6 text-center">
+                        <img src="{% static 'img/home2.jpg' %}" class="d-block w-100" alt="ceramic collection">
+                        <h2>CERAMIC</h2>
+                        <p>Check out our ceramic collection </p>
+                        <p><a class="btn btn-uq rounded-0" href="{% url 'products' %}?category=ceramics">Ceramic</a></p>
+                    </div>
+                    <div class="col-lg6 text-center mb-2">
+                        <img src="{% static 'img/home1.jpg' %}" class="d-block w-100" alt="glass collection">
+                        <h2>GLASS</h2>
+                        <p>Check out our glass collection</p>
+                        <p><a class="btn btn-uq rounded-0" href="{% url 'products' %}?category=glass">Glass</a></p>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnique" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselUnique" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="container collections">
-            <div class="row">
-                <div class="col-lg6 text-center">
-                    <img src="{% static 'img/home2.jpg' %}" class="d-block w-100" alt="ceramic collection">
-                    <h2>CERAMIC</h2>
-                    <p>Check out our ceramic collection </p>
-                    <p><a class="btn btn-uq rounded-0" href="{% url 'products' %}?category=ceramics">Ceramic</a></p>
-                </div>
-                <div class="col-lg6 text-center mb-2">
-                    <img src="{% static 'img/home1.jpg' %}" class="d-block w-100" alt="glass collection">
-                    <h2>GLASS</h2>
-                    <p>Check out our glass collection</p>
-                    <p><a class="btn btn-uq rounded-0" href="{% url 'products' %}?category=glass">Glass</a></p>
-                </div>
-                </div>
-            </div>
-        </div>
-        
-</main>
-{% include 'includes/footer.html' %}
+            
+    </main>
+    {% include 'includes/footer.html' %}
 
 {% endblock %}
