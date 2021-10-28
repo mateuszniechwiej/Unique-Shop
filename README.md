@@ -1,3 +1,4 @@
+{::options parse_block_html="true" /}
 # Unique Shop
 
 This project is an e-commerce website created for Milestone Project 4("Code Institute").
@@ -240,46 +241,57 @@ A solution to satisfy user requirements:
 <summary>Home</summary>
 <img src="docs/wireframes/home.png">
 </details>
+
 <details>
 <summary>Login</summary>
 <img src="docs/wireframes/login.png">
 </details>
+
 <details>
 <summary>About Us</summary>
 <img src="docs/wireframes/about_us.png">
 </details>
+
 <details>
 <summary>Account Details</summary>
 <img src="docs/wireframes/account_details.png">
 </details>
+
 <details>
 <summary>Account Order</summary>
 <img src="docs/wireframes/account_orders.png">
 </details>
+
 <details>
 <summary>Order</summary>
 <img src="docs/wireframes/order.png">
 </details>
+
 <details>
 <summary>Cart</summary>
 <img src="docs/wireframes/cart.png">
 </details>
+
 <details>
 <summary>Checkout</summary>
 <img src="docs/wireframes/checkout.png">
 </details>
+
 <details>
 <summary>Login</summary>
 <img src="docs/wireframes/login.png">
 </details>
+
 <details>
 <summary>Product Details</summary>
 <img src="docs/wireframes/product_details.png">
 </details>
+
 <details>
 <summary>Register</summary>
 <img src="docs/wireframes/register.png">
 </details>
+
 <details>
 <summary>Review</summary>
 <img src="docs/wireframes/review.png">
@@ -385,6 +397,7 @@ More info: [VSCode docs](https://code.visualstudio.com/docs/python/environments#
 
 ## Credits
 [codepen](https://codepen.io/michalwyrwa/pen/GBaPPj) - back to the top button.
+[codepen](https://codepen.io/designcouch/pen/Atyop) - hamburger icon
 [stackoverflow](https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it)- multiselect value
 [Twilo](# https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)-learn how to built contact form
 
