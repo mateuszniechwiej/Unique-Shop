@@ -239,12 +239,12 @@ A solution to satisfy user requirements:
 ### _Wireframes_
 <details>
 <summary>Home</summary>
-<img src="docs/wireframes/home.png">
+<img src="docs/wireframes/home_page.png">
 </details>
 
 <details>
 <summary>Login</summary>
-<img src="docs/wireframes/login.png">
+<img src="docs/wireframes/accout_login.png">
 </details>
 
 <details>
@@ -264,22 +264,17 @@ A solution to satisfy user requirements:
 
 <details>
 <summary>Order</summary>
-<img src="docs/wireframes/order.png">
+<img src="docs/wireframes/order_number.png">
 </details>
 
 <details>
 <summary>Cart</summary>
-<img src="docs/wireframes/cart.png">
+<img src="docs/wireframes/shopping_cart.png">
 </details>
 
 <details>
 <summary>Checkout</summary>
-<img src="docs/wireframes/checkout.png">
-</details>
-
-<details>
-<summary>Login</summary>
-<img src="docs/wireframes/login.png">
+<img src="docs/wireframes/shop_checkout.png">
 </details>
 
 <details>
@@ -289,12 +284,12 @@ A solution to satisfy user requirements:
 
 <details>
 <summary>Register</summary>
-<img src="docs/wireframes/register.png">
+<img src="docs/wireframes/account_register.png">
 </details>
 
 <details>
 <summary>Review</summary>
-<img src="docs/wireframes/review.png">
+<img src="docs/wireframes/product_review.png">
 </details>
 
 ## The Surface Plane
