@@ -18,9 +18,9 @@
                             <thead>
                                 <tr>
                                     <th class="text-center" scope="col">Product Information</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th class="text-center" scope="col">Price</th>
+                                    <th class="text-center" scope="col">Qty</th>
+                                    <th class="text-center" scope="col">Subtotal</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,10 +33,10 @@
                                                 <p class="text-center text-nowrap"><strong>Colour: {{ product.colors|upper }}</strong></p>
                                             {% endif %}
                                         </td>
-                                        <td class="py-3">
+                                        <td class="py-3 text-center">
                                             <p>€{{ product.product.price }}</p>
                                         </td>
-                                        <td class="py-3 w-25">
+                                        <td class="py-3 w-25 text-center">
                                             <form class="form update-form" method="POST"
                                                 action="{% url 'adjust_cart' product.item_id %}">
                                                 {% csrf_token %}
@@ -89,7 +89,7 @@
                                             <a class="remove-item text-danger float-right" id="remove_{{ product.item_id }}"
                                                 data-colors="{{ product.colors }}"><small>Remove</small></a>
                                         </td>
-                                        <td class="py-3">
+                                        <td class="py-3 text-center">
                                             <p class="my-0">€{{ product.product.price | calc_subtotal:product.quantity }}</p>
                                         </td>
                                     </tr>
