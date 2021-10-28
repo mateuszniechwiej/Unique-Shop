@@ -318,6 +318,7 @@ This combination works well with this shop selling uniquely designed handmade pr
 
 ### Database Architecture
 
+![DIAGRAM](docs/db.png)
 
 ### Imagery
 
