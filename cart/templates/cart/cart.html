@@ -11,6 +11,7 @@
                 <hr>
             </div>
         </div>
+        <!-- Cart items  -->
         <div class="row">
                 {% if cart_items %}
                     <div class="table-responsive pr-3">
@@ -24,15 +25,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- For each item in cart shwoing bellow information-->
                                 {% for product in cart_items %}
                                     <tr>
                                         <td class="p-2 w-25">
-                                            <img class="img-fluid" src="{{ product.product.image.url }}">
+                                            <!-- Product name and image -->
+                                            <img class="img-fluid" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
                                             <p class="text-center"><strong>{{ product.product.name }}</strong></p>
+                                            <!-- Display colour if item has one  -->
                                             {% if product.colors != 'N/A' %}
                                                 <p class="text-center text-nowrap"><strong>Colour: {{ product.colors|upper }}</strong></p>
                                             {% endif %}
                                         </td>
+                                        <!-- Product price -->
                                         <td class="py-3 text-center">
                                             <p>€{{ product.product.price }}</p>
                                         </td>
@@ -45,7 +50,7 @@
                                                         <div class="input-group-prepend">
                                                             <button class="decrement-qty btn btn-sm btn-uq rounded-0 d-none d-lg-block"
                                                                 data-item_id="{{ product.item_id }}"
-                                                                id="decrement-qty_{{ product.item_id }}">
+                                                                id="decrement-qty_{{ product.item_id }}" aria-label="decrement quantity">
                                                                 <span>
                                                                     <i class="fas fa-minus fa-sm"></i>
                                                                 </span>
@@ -54,21 +59,22 @@
                                                         <input class="form-control form-control-sm qty_input text-center"
                                                             type="number" name="quantity" value="{{ product.quantity }}" min="1"
                                                             max="99" data-item_id="{{ product.item_id }}"
-                                                            id="id_qty_{{ product.item_id }}">
+                                                            id="id_qty_{{ product.item_id }}" aria-label="quantity">
                                                         <div class="input-group-append">
                                                             <button class="increment-qty btn btn-sm btn-light-uq d-none d-lg-block rounded-0"
                                                                 data-item_id="{{ product.item_id }}"
-                                                                id="increment-qty_{{ prodcuct.item_id }}">
+                                                                id="increment-qty_{{ prodcuct.item_id }}" aria-label="increment quantity">
                                                                 <span>
                                                                     <i class="fas fa-plus fa-sm"></i>
                                                                 </span>
                                                             </button>
                                                         </div>
                                                     </div>
+                                                    <!-- Selected colour hidden from user -->
                                                     <div hidden class="col-12">
                                                         <p class="mt-3"><strong>Colors:</strong></p>
                                                         {% for color in product.colors.field.choices %}
-                                                            {% if product.colors != false %}
+                                                            {% if product.colors != 'N/A' %}
                                                                 <option selected>{{ color|upper }}</option>
                                                             {% else %}
                                                                 <option>'N/A'</option>
@@ -85,7 +91,7 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <a class="update-link text-info"><small>Update</small></a>
+                                            <a class="update-link text-primary"><small>Update</small></a>
                                             <a class="remove-item text-danger float-right" id="remove_{{ product.item_id }}"
                                                 data-colors="{{ product.colors }}"><small>Remove</small></a>
                                         </td>
@@ -95,8 +101,9 @@
                                     </tr>
                                 {% endfor %}
                                 <tr>
+                                    <!-- Cart total info -->
                                     <td colspan="5" class="pt-5 text-right">
-                                        <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                                        <h6><strong>Cart Total: €{{ total|floatformat:2 }}</strong></h6>
                                         <h6>Delivery: {% if total > free_delivery %} <strong>FREE</strong> {% else %}
                                             €{{ delivery|floatformat:2 }}{% endif %}
 

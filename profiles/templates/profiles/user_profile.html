@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Profile container -->
     <div class="container ">
         <div class="row ">
             <div class="col-10 mt-5">
@@ -17,6 +18,7 @@
         <div class="row">
             <div class="col">
                 <h3>Saved delivery info</h3>
+                <!-- Profile Form with user address details-->
                 <form action="{% url 'user_profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
@@ -35,6 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- List of previouse orders showing details of each product -->
                         {% for order in orders %}
                             <tr>
                                 <td>
@@ -52,7 +55,6 @@
                                         {% endfor %}
                                     </ul>
                                 </td>
-
                                 <td>{{ order.grand_total }}</td>
                                 <td>{{ order.date }}</td>
                             </tr>
