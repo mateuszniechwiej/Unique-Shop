@@ -5,38 +5,39 @@
 
 <head>
     {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
 
     {% block extra_meta %}
     {% endblock %}
 
     {% block corecss %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/toggler.css' %}">
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <!-- CSS -->    
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/toggler.css' %}">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-    <script src="https://kit.fontawesome.com/f6667abd86.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-        crossorigin="anonymous"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="{% static 'js/base.js' %}"></script>
+        <script src="https://kit.fontawesome.com/f6667abd86.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -47,31 +48,30 @@
 </head>
 
 <body class="d-flex flex-column h-100">
+    <!-- Navigation bar available on all pages -->
     <nav class="navbar navbar-expand-lg navbar-uq fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" id="logo"
                     alt="logo"></a>
             <div class="nav-item d-flex order-lg-2">
                 <a class="icons-uq nav-link" role="button" href="{% url 'view_cart' %}" aria-label="View cart">
-                    <div class="text-center">
-                        <div><i class="fas fa-shopping-cart"></i></div>
+                    <div class="text-center cart-uq">
+                        <i class="fas fa-shopping-cart"></i>
                         <p class="my-0">
                             {% if grand_total %}
-                            €{{ grand_total|floatformat:2 }}
+                                €{{ grand_total|floatformat:2 }}
                             {% else %}
-                            €0.00
+                                €0.00
                             {% endif %}
                         </p>
                     </div>
                 </a>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            <button class="navbar-toggler" id="hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <p id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
-                </p>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav col-md-4 me-auto ">
@@ -105,21 +105,21 @@
                         <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
                     </li>
                 </ul>
-                <div class="nav-item list-unstyled ">
-                    <a class="icons-uq nav-link" role="button" href="#" id="user-account" data-bs-toggle="dropdown"
+                <div class="dropdown">
+                    <a class="icons-uq nav-link" aria-label="User" role="button" href="#" id="user-account" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                            <div><i class="fas fa-user-circle"></i></div>
+                            <i class="fas fa-user-circle"></i>
                     </a>
-                    <ul class="dropdown-menu " aria-labelledby="user-account">
+                    <ul class="dropdown-menu list-unstyled" aria-labelledby="user-account">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Admin Tool</a>
+                            <li><a href="" class="dropdown-item">Admin Tool</a></li>
                         {% endif %}
-                        <a href="{% url 'user_profile' %}" class="dropdown-item">My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            <li><a href="{% url 'user_profile' %}" class="dropdown-item">My Profile</a></li>
+                            <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>  
                         {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                            <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -131,32 +131,33 @@
                 </form>
             </div>
         </div>
-        </div>
     </nav>
-
+    <!-- Message container to display relevant toast messages for users -->
     {% if messages %}
-    <div class="message-container">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        {% include 'includes/toasts/toast_error.html' %}
-        {% elif level == 30 %}
-        {% include 'includes/toasts/toast_warning.html' %}
-        {% elif level == 25 %}
-        {% include 'includes/toasts/toast_success.html' %}
-        {% else %}
-        {% include 'includes/toasts/toast_info.html' %}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
-    </div>
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
     {% endif %}
-    <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i
+    <!-- Button to return to the top of the page -->
+    <a id="back-to-top" href="#" aria-label="back-to-top button" class="btn btn-light btn-lg back-to-top" role="button"><i
             class="fas fa-chevron-up"></i></a>
 
     {% block content %}
     {% endblock %}
     {% block postloadjs %}
+    <!-- jquery code to show and hide toast messages -->
     <script>
         $(document).ready(function () {
             $('.toast').show();

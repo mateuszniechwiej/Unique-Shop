@@ -76,13 +76,9 @@ hr {
 color: #000;
 }
 
-.navbar-uq i {
-    font-size: 1.2em;
-    color: #000;
-}
-
 .navbar-uq i:hover {
-    font-size: 1.2em;
+    transition: 1s;
+    font-size: 1.5em;
     color: #150578;
 }
 
@@ -126,6 +122,9 @@ hr {
     margin-bottom: 2em;
     padding: 1em;
 }
+.cart-uq {
+    font-size: .8em;
+}
 /*--------------------- Products */
 .empty-search {
     margin-top: 7em;
@@ -138,7 +137,7 @@ hr {
 }
 
 .card-uq {
-    border: 1px solid #150578;
+    border: 1px solid #467599;
 }
 
 .container-products {
@@ -160,9 +159,14 @@ border-radius: 0;}
 
 .icons-category {
     color: #000;
+    background-color: #fff;
+    padding: .2em;
+    border-radius: .1em;
+    text-decoration: none;
 }
+
 .icons-category:hover {
-    color: #fff;
+    color: #150578;
 }
 /*--------------------- Product Details */
 .product-details {
