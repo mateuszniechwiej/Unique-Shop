@@ -15,16 +15,7 @@
                     <div class="carousel-item active" data-bs-interval="10000">
                         <img src="{% static 'img/store.png' %}" class="d-block w-100" alt="shop photo">
                         <div class="carousel-caption d-none d-md-block">
-                            <h4 class="caption">Our History
-                                UNIQUE Crafts & Design was established by 2 friends, Kate and Magdalena, who shared the same passion
-                                for original designed handcrafts. <br>
-                                What has been a dream for them for years, in July 2010 they set up a shop in Dublin city centre, in
-                                George’s Street Arcade, Ireland’s first purpose shopping centre and one of Europe’s oldest city
-                                markets.<br>
-                                Unique is a small business that prides itself on delivering beautiful, colourful handcrafted items
-                                at affordable prices promoting at the same time many creative multi talented individuals living in
-                                Ireland
-                            </h4>
+                                <h1 class="caption">Our Store</h1>
                             <a href="{% url 'products' %}" class="btn btn-uq rounded-0 mx-2">
                                 <span class="text-uppercase">Our Products</span>
                             </a>
@@ -33,9 +24,11 @@
                     <div class="carousel-item" data-bs-interval="2000">
                         <img src="{% static 'img/store2.jpg' %}" class="d-block w-100" alt="shop photo">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3 class="caption">Our shop is located in the George’s Street Arcade, Dublin’s first purpose built
-                                Victorian Shopping Centre (1881), and one of Europe’s oldest, located in the heart of Dublin city
-                                centre in the cultural quarter area.</h3>
+                            <h4 class="caption">Our address:<br>
+                                Street Arcade
+                                South Great George’s
+                                Street Dublin, D02 DH79
+                                Ireland</h4>
                             <a href="{% url 'contact' %}" class="btn btn-uq rounded-0 mx-2">
                                 <span class="text-uppercase">Contact Us</span>
                             </a>
@@ -55,7 +48,7 @@
 
                             {% if request.user.is_authenticated %}
                             {% else %}
-                                <a href="{% url 'account_login' %}" class="btn btn-uq rounded-0 mx-2"><span class="text-uppercase">Register</span></a>
+                                <a href="{% url 'account_login' %}" class="btn btn-uq rounded-0 mx-2"><span class="text-uppercase">Login</span></a>
                             {% endif %}
                         </div>
                     </div>
@@ -69,6 +62,23 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <!-- About Unique Shop -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col p-1 text-center p-2 rounded about-uq">
+                        <h1 class="display-4 ">About Us</h1>
+                        <p class="lead my-3">Our History
+                            UNIQUE Crafts & Design was established by 2 friends, Kate and Magdalena, who shared the same passion
+                            for original designed handcrafts. <br>
+                            What has been a dream for them for years, in July 2010 they set up a shop in Dublin city centre, in
+                            George’s Street Arcade, Ireland’s first purpose shopping centre and one of Europe’s oldest city
+                            markets.<br>
+                            Unique is a small business that prides itself on delivering beautiful, colourful handcrafted items
+                            at affordable prices promoting at the same time many creative multi talented individuals living in
+                            Ireland</p>
+                    </div>
+                </div>
+              </div>
             <div class="container collections">
                 <div class="row">
                     <div class="col-lg6 text-center">

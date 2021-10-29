@@ -125,6 +125,10 @@ hr {
 .cart-uq {
     font-size: .8em;
 }
+.about-uq {
+    background-color: #e0e1d0;
+    color: #000;
+}
 /*--------------------- Products */
 .empty-search {
     margin-top: 7em;
