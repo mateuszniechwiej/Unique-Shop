@@ -99,9 +99,9 @@ color: #000;
 /*---------------------- footer */
 
 footer {
-    background-color: #e0e1d0;
+    background-color: #e0e1dd;
     color: #000;
-    border-top:2px solid #150578;
+    border-top:1px solid #150578;
 }
 /*---------------------- Checkout */
 .checkout-success {
