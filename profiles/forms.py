@@ -23,7 +23,7 @@ class UserProfileForm(forms.ModelForm):
             'user_street_address2': 'Street Address 2',
             'user_county': 'County, State or Locality',
         }
-
+        # Firld for user profile form
         self.fields['user_phone_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'user_country':
@@ -32,5 +32,6 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-dark rounded-0 profile-form-input'
+            self.fields[field].widget.attrs['class'] = 'border-dark rounded-0'
+            self.fields[field].widget.attrs['aria-label'] = placeholder
             self.fields[field].label = False
