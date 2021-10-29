@@ -3,10 +3,11 @@
 {% load cart_tools %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block content %}
+    <!-- Checkout container -->
     <div class="container ">
         <div class="row ">
             <div class="col-10 mt-5">
@@ -16,6 +17,7 @@
             </div>
         </div>
         <div class="row ">
+            <!-- Order summary product quantity count -->
             <div class="col-12 col-lg-6 order-lg-last mb-5">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
                 <div class="row">
@@ -26,11 +28,12 @@
                         <p class="mb-1 mt-0 small text-muted">Subtotal</p>
                     </div>
                 </div>
+                <!-- Display info for each product in cart -->
                 {% for product in cart_items %}
                     <div class="row">
                         <div class="col-2 mb-1">
                             <a href="{% url 'product_details' product.product.id %}">
-                                <img class="w-100" src="{{ product.product.image.url }}" alt="{{ product.name }}">
+                                <img class="w-100" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
                             </a>
                         </div>
                         <div class="col-7">
@@ -44,6 +47,7 @@
                     </div>
                 {% endfor %}
                 <hr class="my-0">
+                <!-- Order total, delivery charge and grand total  -->
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
                         <p class="my-0">Order Total:</p>
