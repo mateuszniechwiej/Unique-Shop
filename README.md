@@ -1,4 +1,3 @@
-{::options parse_block_html="true" /}
 # Unique Shop
 
 This project is an e-commerce website created for Milestone Project 4("Code Institute").
@@ -40,6 +39,7 @@ UNIQUE Crafts & Design is a shop selling handcrafted items. Located in Geroge's 
 - [Deployment](#deployment)
   - [Project Initiation](#project-initiation)
   - [Heroku Deployment](#heroku-deployment)
+  - [Run Locally](#run-locally)
 - [Credits](#credits)
   - [Code](#code)
   - [Acknowledgements](#acknowledgements)
@@ -310,25 +310,48 @@ Fonts used in this project are:
 This combination works well with this shop selling uniquely designed handmade products.
 
 ### Differences to design:
-
+There are several changes to the original design:
+- 
 ### Database Architecture
+A relational database is used in this project as the best solution for an e-commerce website. In the development process, SQLite was used. Heroku Postgres was used in production:
 
 ![DIAGRAM](docs/db.png)
 
 ### Imagery
-
+All images used in this project were supplied by Unique Shop owner.
 ## Features
 
 ### Existing Features
 
 1. Mobile responsive design.
+ - toasts messages
+ - navbar
+ - back to top button
+ - image carousel
+ - cards
+ - forms
 2. Register and login functionality.
-3. Profile page with username name and email.
-3. Error page to display error messages.
+3. Profile page with email, order history and user address details for shipping.
+4. Error pagaes 404 and 500
+5. "__Stripe__" payments for customers
+6. Review products 
+7. Django multiselect allowing admin to add relevant colour for each product
+8. Search functionality
+9. Sorting functionality for price and category
+10. Cloudinary for storing media files
+11. AWS3 to host static files 
 
 
 ### Future Features
-
+1. Admin Tool to add/delete product and read messages from user.
+2. Average rating display and sorting reviews from highest rated.
+3. Voucher cupon model to allow register users get disscount.
+4. Add product variants to get the price depending on size of product.
+5. Displaying more images for product on product details page
+6. Pagination
+7. Address google map
+8. Shipping rates based on country 
+9. Company footer
 
 ## Technologies Used
 
@@ -339,23 +362,81 @@ This combination works well with this shop selling uniquely designed handmade pr
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 
 * [JavaScript](https://pl.wikipedia.org/wiki/JavaScript)
+* [Python](https://www.python.org/) -
+  <details>
+  <summary>python modules used in this project:</summary>
 
-* [Python](https://www.python.org/)
-    - Python Modules used in this project can be found in the requirements.txt project file)
+    * appdirs==1.4.4
+    * asgiref==3.4.1
+    * Babel==2.9.1
+    * boto3==1.19.2
+    *  botocore==1.22.2
+    *  certifi==2021.5.30
+    *  cffi==1.14.6
+    *  charset-normalizer==2.0.6
+    *  cloudinary==1.26.0
+    *  crispy-bootstrap5==0.6
+    *  cryptography==3.4.8
+    *  defusedxml==0.7.1
+    *  distlib==0.3.1
+    *  dj-database-url==0.5.0
+    *  Django==3.2.7
+    *  django-allauth==0.45.0
+    *  django-cleanup==5.2.0
+    *  django-cloudinary-storage==0.3.0
+    *  django-colorfield==0.4.5
+    *  django-countries==7.2.1
+    *  django-crispy-forms==1.13.0
+    *  django-dotenv==1.4.2
+    *  django-multipleselectfield==0.2.0.post2
+    *  django-multiselectfield==0.1.12
+    *  django-storages==1.12.2
+    *  filelock==3.0.12
+    *  gunicorn==20.1.0
+    *  idna==3.2
+    *  jmespath==0.10.0
+    *  oauthlib==3.1.1
+    *  Pillow==8.3.2
+    *  psycopg2-binary==2.9.1
+    *  py-moneyed==1.2
+    *  pycparser==2.20
+    *  PyJWT==2.1.0
+    *  python-dateutil==2.8.2
+    *  python-decouple==3.5
+    *  python3-openid==3.2.0
+    *  pytz==2021.1
+    *  requests==2.26.0
+    *  requests-oauthlib==1.3.0
+    *  s3transfer==0.5.0
+    *  six==1.15.0
+    *  sqlparse==0.4.2
+    *  stripe==2.61.0
+    *  urllib3==1.26.7
+    *  virtualenv==20.4.4
+    </details>
 
 ## Frameworks, Programmes and Libraries
+* [jQuery](https://jquery.com/) - used for toast messages,increment/decrement functionality , Stripe payments, hamburger toggler, back to top button and preventing form from re-submission reviews.
+* [Django](https://www.djangoproject.com/) framework was used to build this site.
+* [Bootstrap 5](https://getbootstrap.com) - 
+    used for layouts, styling and custom components
 * [JIRA](https://www.atlassian.com/software/jira) - project management tool to organize workflow.
 * [Balsamiq](https://balsamiq.com/) - to create wireframes
 * [techsini](https://techsini.com/) - to generate website mock-up.
 * [dbdiagram](https://dbdiagram.io/) - to create data base diagram.
+* [PostgreSQL](https://www.postgresql.org/)
+    * db used after deploying to heroku
 * [Google Fonts](https://fonts.google.com/) - to import fonts for this site
+* [JPEG-OPTIMIZER](http://jpeg-optimizer.com/) - to optimized some images used in this project.
 * [Font Awesome](https://fontawesome.com/) - for social media links and forms icons.
 * [Heroku](https://heroku.com) - Heroku was to deploy and host the live website.
+* [AWS](https://aws.amazon.com/free/) - AWS S3 Bucket was set up to store static files.
 * [Visual Studio Code](https://code.visualstudio.com/) - used for developing this website and commit the project to GitHub repository.
 * [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - used to debug the styling issues, test the website responsiveness and to make sure colour contrast is correct.
 * [Github](https://github.com/) - Github as the hosting site was used to store the source code of this website.
 * [Git](https://git-scm.com/) - used Git to commit and push code to the GitHub repository.
 * [Favicon](https://favicon.io/) - to create a favicon for this Website.
+* [Wave](https://wave.webaim.org/) - web accessibility evaluation tool
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse) - as a part of the chrome dev tool was used to improve the quality of the web page.
 
 ## Testing
@@ -370,33 +451,63 @@ Testing :point_right: [TESTING.md]
 
 ## Deployment
 
-### Local Clone
-1. Navigating to the GitHub [Repository](https://github.com/mateuszniechwiej/Climbing-Buddy)
+### Project Initiation
+
+1. Navigating to the GitHub [Repository](https://github.com/mateuszniechwiej/unique_shop/)
 2. Click on Code green button.
 3. Under the Clone section, copy the URL from the HTTPS : 
-
-5. Use the IDE of choice to open the terminal.
-
-6. Use git clone command followed by the copied URL.
-
-7. A clone of the project will now be created locally on your machine.
-
-### Create a Virtual Environment(VSCode)
-__(You need to have installed Python extensions and Python version 3 before taking following steps )__
-1. On the the local system create project folder 
-2. In that folder use (for Windows) the command: 
-3. Select and activate an environment (To select a specific environment, use the `Python: Select Interpreter` command from the `Command Palette (Ctrl+Shift+P)`.
-
-More info: [VSCode docs](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment)
+4. Use the IDE of choice(vscode in my case) to open the terminal.
+5. Use git clone command followed by the copied URL.
+6. A clone of the project will now be created locally on your machine.
 
 ### Heroku Deployment
+* Create Application
+  1. Create Heroku account.
+  2. Press `New` button. 
+  2. Select `Create a new app`.
+  3. Enter the app name.
+  4. Select region.
+ * Create connection to Github Repository
+   1. Click the deploy tab and select GitHub - `Connect to GitHub`.
+   2. field to find a github repository to connect to will then be displayed.
+   3. type repository name in that input field 
+   4. once repo founded , click the connect button.
+  * PostgresSQL Database
+   1. Click the `resources` tab
+   2. Under Add-ons seach for Heroku Postgres and then click on it when it appears.
+   3. Select Plan name Hobby Dev - Free and then click Submit Order Form.
+  * Setting eniviroment variables 
+   1. Click on the settings tab and then click reveal config vars.
+   2. Variables added for this project: 
+    * AWS_ACCESS_KEY_ID
+    * AWS_SECRET_ACCESS_KEY
+    * DATABASE_URL
+    * EMAIL_HOST_PASS
+    * EMAIL_HOST_USER
+    * SECRET_KEY
+    * STRIPE_PUBLIC_KEY
+    * STRIPE_SECRET_KEY
+    * STRIPE_WEBHOOK_SECRET
+    * USE_AWS
+  * Enable automatic deployment:
+   * Click the Deploy tab
+   * In the `Automatic deploys section`, select branch you want to deploy from then click `Enable Automation Deploy`
+### Run Locally
+1. Navigating to the GitHub [Repository](https://github.com/mateuszniechwiej/uni)
+2. Click on Code green button.
+3. Under the Clone section, copy the URL from the HTTPS 
+5. Use the IDE of choice to open the terminal.
+6. Use git clone command followed by the copied URL.7. A clone of the project will now be created locally on your machine.
 
 ## Credits
-[codepen](https://codepen.io/michalwyrwa/pen/GBaPPj) - back to the top button.
-[codepen](https://codepen.io/designcouch/pen/Atyop) - hamburger icon
+[codepen](https://codepen.io/michalwyrwa/pen/GBaPPj) - used this code and cutomized for this site
+[codepen](https://codepen.io/designcouch/pen/Atyop) - used this code and customized to create hamburger toggler in navbar
 [stackoverflow](https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it)- multiselect value
-[Twilo](# https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)-learn how to built contact form
+[Twilo](# https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)- learn how to built contact form
 
 ### Code
 
 ## Acknowledgements
+* My mentors, **Daisy Mc Girr** and **_Maranatha Ilesanmi_** for advice, guidance and support on this project.
+* Igor from **Tutor Support** - for help on this project.
+* **My friends and family** - for giving feedback on my project and testing this website.
