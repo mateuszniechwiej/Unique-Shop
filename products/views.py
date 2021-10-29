@@ -25,7 +25,7 @@ def upload(request):
 
 def products(request):
     """
-    A view to display products
+    A view to display all products, including sorting and search queries.
     """
 
     products = Product.objects.all()
@@ -48,9 +48,12 @@ def products(request):
                                    any search criteria!")
                     return redirect(reverse('products'))
 
-                queries = Q(name__icontains=query) | Q(description__icontains=query)
+                queries = (
+                           Q(name__icontains=query) |
+                           Q(description__icontains=query)
+                )
                 products = products.filter(queries)
-
+            # add sorting products ascending
             if 'sort' in request.GET:
                 sortkey = request.GET['sort']
                 sort = sortkey
@@ -83,9 +86,10 @@ def product_details(request, product_id):
     """
 
     product = get_object_or_404(Product, pk=product_id)
+    # get reviews for that product
     reviews = Review.objects.filter
 
-    # add review to the product
+    # add review to the product when user is logged in
     if request.method == 'POST' and request.user.is_authenticated:
         rate = request.POST.get('rate', 5)
         comment = request.POST.get('comment', '')

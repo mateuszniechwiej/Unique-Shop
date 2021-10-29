@@ -13,7 +13,6 @@ from .forms import OrderForm
 from cart.contexts import cart_contents
 
 import stripe
-
 import json
 
 
@@ -23,8 +22,11 @@ def cache_checkout_data(request):
     Checkout data caching
     """
     try:
+        # split the client secret to get payment intent id
         pid = request.POST.get('client_secret').split('_secret')[0]
+        # set stripe secret key
         stripe.api_key = settings.STRIPE_SECRET_KEY
+        # call to modify payment intent and check if user wants to save info
         stripe.PaymentIntent.modify(pid, metadata={
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
@@ -45,6 +47,7 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
+        # getting items if in the cart else creating empty dict
         cart = request.session.get('cart', {})
 
         form_data = {
