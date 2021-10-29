@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block content %}
-
+    <!-- Checkout success container -->
     <div class="container">
         <div class="checkout-success" style="margin:8em auto;">
         <div class="row justify-content-center">
@@ -37,6 +37,7 @@
                 <h1 >Order Details:</h1>
             </div>
         </div>
+        <!-- Display information from that order -->
         {% for product in order.lineitems.all %}
             <div class="row">
                 <div class="col-12 col-lg-6">
@@ -49,6 +50,7 @@
             </div>
         {% endfor %}
         <hr>
+        <!-- Delivery informations -->
         <div class="row ">
             <div class="col-12 col-lg-8 mt-2">
                 <h2 >Deliery details</h2>
@@ -80,6 +82,7 @@
                 </div>
             </div>
         {% endif %}
+        <!-- Display county or/and postcode when available -->
         {% if order.county %}
             <div class="row">
                 <div class="col-12 col-lg-6">
@@ -90,14 +93,14 @@
                 </div>
             </div>
         {% endif %}
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <h4>Town or City</h4>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h4>Town or City</h4>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p>{{ order.town_or_city }}</p>
+                </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <p>{{ order.town_or_city }}</p>
-            </div>
-        </div>
         {% if order.order.postcode %}
             <div class="row">
                 <div class="col-12 col-lg-6">
@@ -125,6 +128,7 @@
             </div>
         </div>
         <hr>
+        <!-- Order Summary info-->
         <div class="row ">
             <div class="col-12 col-lg-8 mt-2">
                 <h2>Order Summary:</h2>
