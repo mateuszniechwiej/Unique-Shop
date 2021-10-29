@@ -4,10 +4,9 @@
     box-shadow:none;
   }
 #hamburger {
-    width: 60px;
-    height: 30px;
+    width: 40px;
+    height: 20px;
     position: relative;
-    margin: 50px auto;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -22,10 +21,10 @@
 #hamburger span {
 display: block;
 position: absolute;
-height: 6px;
+height: 4px;
 width: 100%;
 background: #000;
-border-radius: 6px;
+border-radius: 3px;
 opacity: 1;
 left: 0;
 -webkit-transform: rotate(0deg);
@@ -47,7 +46,7 @@ transition: .25s ease-in-out;
 }
 
 #hamburger span:nth-child(2) {
-top: 18px;
+top: 9px;
 -webkit-transform-origin: left center;
 -moz-transform-origin: left center;
 -o-transform-origin: left center;
@@ -55,7 +54,7 @@ transform-origin: left center;
 }
 
 #hamburger span:nth-child(3) {
-top: 36px;
+top: 18px;
 -webkit-transform-origin: left center;
 -moz-transform-origin: left center;
 -o-transform-origin: left center;
@@ -68,7 +67,7 @@ transform-origin: left center;
 -o-transform: rotate(45deg);
 transform: rotate(45deg);
 top: -3px;
-left: 8px;
+left: 5px;
 }
 
 #hamburger.open span:nth-child(2) {
@@ -81,7 +80,7 @@ opacity: 0;
 -moz-transform: rotate(-45deg);
 -o-transform: rotate(-45deg);
 transform: rotate(-45deg);
-top: 39px;
-left: 8px;
+top: 25px;
+left: 5px;
 }
   

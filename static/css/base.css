@@ -14,21 +14,6 @@ hr {
     color: #000;
 }
 
-nav a {
-    font-family: 'Spirax', cursive;
-    font-size: 1.4em;
-    white-space: nowrap;
-}
-
-.nav-link {
-color: #000;
-}
-
-nav i {
-    font-size: 1.2em;
-    color: #000;
-}
-
 .update-link, .remove-item  {
     cursor: pointer;
 }
@@ -75,16 +60,48 @@ nav i {
 .icons-uq:hover {
     color: #150578;
 }
-/*---------------------- Base */
-.unique-navbar {
+/*-------------------------- Navbar */
+.navbar-uq a {
+    font-family: 'Spirax', cursive;
+    font-size: 1.4em;
+    white-space: nowrap;
+}
+
+.navbar-uq a:hover {
+    color: #150578;
+    text-decoration: underline;
+}
+
+.navbar-uq .nav-link {
+color: #000;
+}
+
+.navbar-uq i {
+    font-size: 1.2em;
+    color: #000;
+}
+
+.navbar-uq i:hover {
+    font-size: 1.2em;
+    color: #150578;
+}
+
+#hamburger {
+    margin: 0;
+}
+.navbar-uq {
     background-color: #e0e1d0;
     color: #000;
     border-bottom: 1px solid #150578;
+    padding: .2em 0 .2em 0 ;
 }
 
 #logo {
     width: 100px;
 }
+
+/*---------------------- footer */
+
 footer {
     background-color: #e0e1d0;
     color: #000;
