@@ -6,7 +6,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-h1,h2,h3 {
+h1,h2,h3, h4 {
     font-family: 'Spirax', cursive;
 }
 
@@ -127,6 +127,16 @@ hr {
     padding: 1em;
 }
 /*--------------------- Products */
+.empty-search {
+    margin-top: 7em;
+}
+
+.empty-search p {
+    font-family: 'Spirax', cursive;
+    font-size: 3em;
+
+}
+
 .card-uq {
     border: 1px solid #150578;
 }

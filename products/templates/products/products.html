@@ -3,8 +3,10 @@
 
 {% block content %}
     <main class="flex-shrink-0 ">
+        <!-- Container holding all products -->
         <div class="container container-products mt-5">
             <div class="row mt-5 ">
+                <!-- Add each product with image, name, category, and price -->
                 {% for product in products %}
                     <div class="col-sm-6 col-lg-4 col-xl-3 mt-5">
                         <div class="card card-uq h-100 mt-5 rounded-0">
@@ -24,6 +26,23 @@
                                 </p>
                                 <p class="mt-1 mb-0"> <strong>€{{ product.price }}</strong></p>
                             </div>
+                        </div>
+                    </div>
+                <!-- When search phrase don't match any product -->
+                {% empty %}
+                    <div class="empty-search mx-auto text-center">
+                        <div>
+                            <p>We're sorry<br>
+                                There was no product to be found!<br>
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{% url 'products' %}" class="btn btn-light-uq rounded-0 ">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Back to all products</span>
+                            </a>
                         </div>
                     </div>
                 {% endfor %}
