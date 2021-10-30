@@ -14,21 +14,21 @@
         <!-- Cart items  -->
         <div class="row">
                 {% if cart_items %}
-                    <div class="table-responsive pr-3">
+                    <div class="table-responsive p-0">
                         <table class="table caption-top">
                             <thead>
                                 <tr>
-                                    <th class="text-center" scope="col">Product Information</th>
-                                    <th class="text-center" scope="col">Price</th>
-                                    <th class="text-center" scope="col">Qty</th>
-                                    <th class="text-center" scope="col">Subtotal</th>
+                                    <th class="text-center th-uq" scope="col">Product Information</th>
+                                    <th class="text-center th-uq" scope="col th-uq">Price</th>
+                                    <th class="text-center th-uq" scope="col">Qty</th>
+                                    <th class="text-center th-uq" scope="col">Subtotal</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- For each item in cart shwoing bellow information-->
                                 {% for product in cart_items %}
                                     <tr>
-                                        <td class="p-2 w-25">
+                                        <td class="px-0 w-25">
                                             <!-- Product name and image -->
                                             <img class="img-fluid" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
                                             <p class="text-center"><strong>{{ product.product.name }}</strong></p>

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Spirax&display=swap');
 
 
-
 * {
     font-family: 'Open Sans', sans-serif;
 }
@@ -318,4 +317,16 @@ a.error:hover {
     nav a {
         font-size: 1.5em;
     }
+}
+
+@media screen and (max-width: 400px) {
+    
+.th-uq {
+    font-size: .8em;
+    padding: .0;
+}
+.td-uq {
+    font-size: ;
+}
+
 }
