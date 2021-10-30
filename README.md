@@ -27,6 +27,7 @@ UNIQUE Crafts & Design is a shop selling handcrafted items. Located in Geroge's 
     - [Typography](#typography)
     - [Database Architecture](#database-architecture)
     - [Imagery](#imagery)
+    - [Differences to design](#differences-to-design)
 - [Features](#features)
   - [Existing Features](#existing-features)
   - [Future Features](#future-features)
@@ -309,9 +310,6 @@ Fonts used in this project are:
 
 This combination works well with this shop selling uniquely designed handmade products.
 
-### Differences to design:
-There are several changes to the original design:
-- 
 ### Database Architecture
 A relational database is used in this project as the best solution for an e-commerce website. In the development process, SQLite was used. Heroku Postgres was used in production:
 
@@ -319,6 +317,22 @@ A relational database is used in this project as the best solution for an e-comm
 
 ### Imagery
 All images used in this project were supplied by Unique Shop owner.
+
+### Differences to design:
+There are several changes to the original design:
+
+1. Not including voucher coupons for registered users due to lack of time.
+2. Not including model variants to change the price based on product size as that implementation become too expensive in terms of resources.
+3. Home page design changed to not overload users with too much content.
+4. Adding contact form for users and allowing sending emails to site admin.
+5. Not Including About Us page (moving some information to contact page)
+6. Not including login and registration pages and use the allauth templates.
+7. Change approach for a product review :
+  * Allow users to add comment
+  * Not include star rating(instead 1-5 points scale)
+8. Not including google maps due to concept change during the development process.
+
+
 ## Features
 
 ### Existing Features
