@@ -3,22 +3,46 @@
 
 
 {% block content %}
-    <!-- Contact Form -->
-    <main class="flex-shrink-0">
-        <div class="container contact" >
-            <div class="row ">
-                <div class="col-12 col-md-8 mt-2 mb-3 offset-lg-2 contact-form">
-                    <h1 class="text-center">Contact us</h1>
-                    <form action="{% url 'contact' %}" method="POST">
-                        {% csrf_token %}
-                        {% for field in form %}
-                            {{ field | as_crispy_field}}
-                        {% endfor %}
-                        <input type="submit" value="Submit" class="btn btn-contact">
-                    </form>
-                </div>    
+<!-- Contact Form -->
+<main class="flex-shrink-0"></main>
+    <div class="container contact text-center">
+        <h1 class="text-center mb-5">CONTACT Us</h1>
+        <div class="row">
+            <!-- Store information -->
+            <div class="col-sm-5">
+                <h2 class="mb-2">Unique shop</h2>
+                <p><i class="fas fa-map-marker-alt"></i> 
+                    Unit 24, George’s
+                    Street Arcade<br>
+                    South Great George’s<br>
+                    Street Dublin, D02 DH79
+                    Ireland</p>
+                <p><i class="fas fa-phone">+353 1 671 9184</i> </p>
+                <p><i class="fas fa-store"></i><br>Our Opening Hours <br>
+                    Monday: 10.30am – 6.30pm <br>
+                    Tuesday: 10.30am – 6.30pm <br>
+                    Wednesday: 10.30am – 6.30pm <br>
+                    Thursday: 10.30am – 7.00pm <br>
+                    Friday: 10.30am – 6.30pm <br>
+                    Saturday: 10.30am – 6.30pm <br>
+                    Sunday: 12.00pm – 6.00pm</p>
+            </div>
+            <!-- Conatct form -->
+            <div class="col-sm-7 contact-form">
+                <div class="row">
+                    <div class="col">
+                        <form action="{% url 'contact' %}" method="POST">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                {{ field | as_crispy_field}}
+                            {% endfor %}
+                            <input type="submit" value="Submit" class="btn btn-contact">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 {% include 'includes/footer.html' %}
 {% endblock %}

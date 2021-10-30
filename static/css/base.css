@@ -101,7 +101,6 @@ color: #000;
 footer {
     background-color: #e0e1dd;
     color: #000;
-    border-top:1px solid #150578;
 }
 /*---------------------- Checkout */
 .checkout-success {
@@ -245,6 +244,9 @@ border-radius: 0;}
 .allauth-container,
 .contact {
     margin-top: 10em;
+    margin-bottom: 2em;
+    border: 1px solid #150578;
+    padding: 2em;
 }
 
 .contact h1,
@@ -267,20 +269,25 @@ border-radius: 0;}
 .allauth-form-inner-content {
     background-color: #e0e1dd;
     padding: 1em;
-    border: 1px solid #150578;
+    /* border: 1px solid #150578; */
 }
 
 .contact-form input,
 .contact-form textarea,
 .allauth-form-inner-content input {
     border-radius: 0;
-    border: 1px solid #150578;
+    /* border: 1px solid #150578;  */
 }
 
 .btn-contact
 .allauth-form-inner-content {
     background-color: #fff;
     color: #150578;
+}
+
+.contact-form .btn-contact {
+    background-color: #000;
+    color: #fff;
 }
 
 .btn-contact:hover {
