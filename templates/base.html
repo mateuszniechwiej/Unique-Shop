@@ -112,9 +112,6 @@
                     </a>
                     <ul class="dropdown-menu list-unstyled" aria-labelledby="user-account">
                         {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                            <li><a href="" class="dropdown-item">Admin Tool</a></li>
-                        {% endif %}
                             <li><a href="{% url 'user_profile' %}" class="dropdown-item">My Profile</a></li>
                             <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>  
                         {% else %}
