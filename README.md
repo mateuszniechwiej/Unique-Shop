@@ -455,7 +455,7 @@ There are several changes to the original design:
 
 ## Testing
 
-Testing :point_right: [TESTING.md]
+:point_right: [TESTING](TESTING.md)
 
 ## Code Issues
 
