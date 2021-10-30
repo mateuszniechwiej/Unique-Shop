@@ -269,14 +269,14 @@ border-radius: 0;}
 .allauth-form-inner-content {
     background-color: #e0e1dd;
     padding: 1em;
-    /* border: 1px solid #150578; */
+    border: 1px solid #150578;
 }
 
 .contact-form input,
 .contact-form textarea,
 .allauth-form-inner-content input {
     border-radius: 0;
-    /* border: 1px solid #150578;  */
+    border: 1px solid #150578;  
 }
 
 .btn-contact
@@ -286,8 +286,7 @@ border-radius: 0;}
 }
 
 .contact-form .btn-contact {
-    background-color: #000;
-    color: #fff;
+
 }
 
 .btn-contact:hover {
