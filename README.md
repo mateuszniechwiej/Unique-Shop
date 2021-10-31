@@ -72,6 +72,9 @@ UNIQUE Crafts & Design is a shop selling handcrafted items. Located in Geroge's 
 
 - [Testing](#testing)
 
+
+
+
 - [Deployment](#deployment)
 
   - [Project Initiation](#project-initiation)
@@ -106,7 +109,7 @@ Customers will be able to purchase items offered by the shop. Registered users w
 
 
 
-The aim is to build a responsive e-commerce 
+The aim is to build a responsive e-commerce website.
 
 
 
@@ -228,30 +231,17 @@ The aim is to build a responsive e-commerce
 
  10. Responsive website with a navigation menu and website title.
 
-
-
 | -   | Planed Feature                                                     | Importance | Viability/Feasibility |
-
 | --- | ------------------------------------------------------------------ | ---------- | --------------------- |
-
 | 1   | Users able to register                                             | 5          | 3                     |
-
 | 2   | Allow admin and users to login                                     | 5          | 3                     | 
-
-| 3   |  Allow user to purchase items online     | 5          | 5                     | 
-
+| 3   |  Allow user to purches items online     | 5          | 5                     | 
 | 4   | Allow user to review shop products            | 4          | 5                     |
-
 | 5   | Display Users profile                                              | 4          | 4                     |
-
 | 6   | Display Users orders                         | 4          | 4                     |
-
 | 7   | Search product functionality                 | 4          | 3                     |
-
-| 8   | Add and redeem voucher for users  | 3          | 5                     |
-
+| 8   | Add and reedem voucher for users  | 3          | 5                     |
 | 9   | Use SQLite database to store information  | 5          | 4                     |
-
 | 10  | Responsive website with a navigation menu and website title        | 5          | 2                     |
 
 
@@ -372,7 +362,7 @@ A solution to satisfy user requirements:
 
 
 
-- edit and delete buttons available on the account profile page once a user logged in.
+- update profile will be available. and delete buttons available on the account profile page once a user logged in.
 
 
 
@@ -660,9 +650,7 @@ There are several changes to the original design:
 
 8. Not including google maps due to concept change during the development process.
 
-
-
-
+9. Update profile information available, but to delete account user needs to fill in contact form and site admin will delete the account.
 
 ## Features
 
@@ -886,7 +874,7 @@ There are several changes to the original design:
 
 * [Heroku](https://heroku.com) - Heroku was to deploy and host the live website.
 
-* [AWS](https://aws.amazon.com/free/) - AWS S3 Bucket was set up to store static files.
+* [AWS](https://aws.amazon.com/free/) - AWS S3 Bucket was set up to store static files and media files(if needed as Cloudinary is currently used for products media)
 
 * [Visual Studio Code](https://code.visualstudio.com/) - used for developing this website and committing the project to GitHub repository.
 
@@ -909,9 +897,6 @@ There are several changes to the original design:
 
 
 :point_right: [TESTING](TESTING.md)
-
-
-
 
 
 ## Deployment
@@ -1014,7 +999,9 @@ There are several changes to the original design:
 
 
 
-## Credits
+# Credits
+
+## Code
 
 [codepen](https://codepen.io/michalwyrwa/pen/GBaPPj) - used this code and customized it for this site
 
@@ -1022,7 +1009,7 @@ There are several changes to the original design:
 
 [stackoverflow](https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it)- multiselect value
 
-[Twilo](# https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)- learn how to built contact form
+[Twilo](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)- learn how to built contact form
 
 
 ## Acknowledgements

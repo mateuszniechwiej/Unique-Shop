@@ -1065,7 +1065,7 @@ environment variables were exposed to all users and available to read in the Git
 
 **Solution**
 
-Edited unknown characters and upload data to Postgres DB
+Edited unknown characters and uploaded data to Postgres DB
 
 3. Error when trying to add an item without the colour to the shopping cart
 MultiValueDictKeyError
