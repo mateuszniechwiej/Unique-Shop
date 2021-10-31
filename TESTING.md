@@ -199,9 +199,9 @@ Follow the same steps for:
 
     `Stray end tag div: /div>↩    </div>↩↩ `
 
-* Fix issue and `git commit <Fix: message>` and `git push`
+* Fix the issue and `git commit <Fix: message>` and `git push`
 
-* Reapeat test
+* Repeat test
 
 * Result:
 
@@ -656,7 +656,7 @@ The website was tested on a varied number of devices:
 
 
 
-* IOS - iphone Pro 12 (screen size 6.1-inch) Safari adn chrome
+* IOS - iPhone Pro 12 (screen size 6.1-inch) Safari and chrome
 
 
 
@@ -956,11 +956,11 @@ Steps:
 
 ### Reset password
 
-- when login choose forgoten password - PASS
+- when login choose forgotten password - PASS
 
 - type your email - PASS
 
-- after receiving e mail change password - PASS
+- after receiving an email change the password - PASS
 
 ![password](docs/reset_password.PNG)
 
@@ -1043,9 +1043,70 @@ For error 500:
 ## Code Issues
 
 
+1. During development I notice the mistake of not hiding secret keys in setting.py 
 
-**Understanding the problem** - 
+**Understanding the problem** 
+
+environment variables were exposed to all users and available to read in the GitHub repository
 
 
+**Solution**
 
-**Solution** - 
+- generated new secret keys for Django and Cloudinary
+- installed Django dot-env
+- store secret keys in the .env file
+- add `.env` to `.gitignore`
+
+2. Encoding issues when trying to upload JSON DB data to Postgres
+
+**Understanding the problem** 
+
+ It seems I was trying to decode the utf-16 encode file with utf-8 codes
+
+**Solution**
+
+Edited unknown characters and upload data to Postgres DB
+
+3. Error when trying to add an item without the colour to the shopping cart
+MultiValueDictKeyError
+
+**Understanding the problem** 
+
+All items needed to have a value for the colour
+
+**Solution**
+
+Add default value for color variable:
+![color_default](docs/multiSelectField.PNG)
+
+4. Reviews added on page refresh
+
+    **Understanding the problem**
+
+    The form was resubmitting user review
+
+
+    **Solution**
+    Added js script to prevent that behaviour
+    ![reviews](docs/reviews.PNG)
+
+5. Logo redirect link not working
+
+**Understanding the problem**
+
+Not used Django template language for image src.
+
+
+**Solution**
+
+Change image src to `{% static 'img/logo.png' %}`
+
+6. Back to top button covered with products cards
+
+**Understanding the problem**
+
+z-index was higher for product cards
+
+**Solution**
+
+Set z-index for `back-to-top-button` to 999

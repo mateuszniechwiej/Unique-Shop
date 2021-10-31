@@ -238,7 +238,7 @@ The aim is to build a responsive e-commerce
 
 | 2   | Allow admin and users to login                                     | 5          | 3                     | 
 
-| 3   |  Allow user to purches items online     | 5          | 5                     | 
+| 3   |  Allow user to purchase items online     | 5          | 5                     | 
 
 | 4   | Allow user to review shop products            | 4          | 5                     |
 
@@ -248,7 +248,7 @@ The aim is to build a responsive e-commerce
 
 | 7   | Search product functionality                 | 4          | 3                     |
 
-| 8   | Add and reedem voucher for users  | 3          | 5                     |
+| 8   | Add and redeem voucher for users  | 3          | 5                     |
 
 | 9   | Use SQLite database to store information  | 5          | 4                     |
 
@@ -1023,11 +1023,6 @@ There are several changes to the original design:
 [stackoverflow](https://stackoverflow.com/questions/5895588/django-multivaluedictkeyerror-error-how-do-i-deal-with-it)- multiselect value
 
 [Twilo](# https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)- learn how to built contact form
-
-
-
-### Code
-
 
 
 ## Acknowledgements
