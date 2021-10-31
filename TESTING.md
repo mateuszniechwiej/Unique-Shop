@@ -3,9 +3,6 @@
 
 
 
-
-
-
 This website is for Milestone Project 4.
 
 
@@ -14,22 +11,11 @@ Built with HTML, CSS, JavaScript and Python Django.
 
 
 
-
-
-
-
 To go back to README :point_right: [README.md](README.md)
 
 
 
-
-
-
-
 # Table of Contest
-
-
-
 
 
 
@@ -46,23 +32,12 @@ To go back to README :point_right: [README.md](README.md)
 
 
 
-4. [Manual Test](#links-test)
+4. [Manual Test](#manual-test)
 
 
-
-
-
-
-
-
-
-
+5. [Code Issues](#code-issues)
 
 # Testing Plan
-
-
-
-
 
 
 
@@ -129,22 +104,11 @@ Testing required:
 
 
 
-
-
-
 ## HTML Validator - Test
 
 
 
-
-
-
-
 Naviagate to HTML Validator - [W3C HTML Validator](https://validator.w3.org/) - PASS
-
-
-
-
 
 
 
@@ -161,10 +125,6 @@ Naviagate to HTML Validator - [W3C HTML Validator](https://validator.w3.org/) - 
 
 
  3. Result displayed: ![Result](docs/validation/home_html_validation.PNG)
-
-
-
-
 
 
 
@@ -216,12 +176,7 @@ Follow the same steps for:
 
 
 
-
-
-
-
 * Signup
-
 
 
   * Url: https://mn-unique-shop.herokuapp.com/accounts/signup/
@@ -229,10 +184,6 @@ Follow the same steps for:
 
 
   * Result: PASS
-
-
-
-
 
 
 
@@ -246,42 +197,19 @@ Follow the same steps for:
 
  * error: 
 
-
-
     `Stray end tag div: /div>↩    </div>↩↩ `
 
+* Fix issue and `git commit <Fix: message>` and `git push`
 
+* Reapeat test
 
- *   
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Result:
 
 
 ## CSS Validator - Test
 
 
-
-
-
-
-
 Navigate to CSS Validator - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - PASS
-
-
-
-
-
 
 
 * base.css
@@ -293,24 +221,9 @@ Navigate to CSS Validator - [W3C CSS Validator](https://jigsaw.w3.org/css-valida
 
 
 2. Result:
-
-
-
-
-
-
-
     ![CSS](docs/validation/css.gif)
 
-
-
-
-
-
-
 * toggler.css
-
-
 
  1. Copy and Paste the CSS code from toggler.css in the project files in the By direct input tab and click Check
 
@@ -319,17 +232,7 @@ Navigate to CSS Validator - [W3C CSS Validator](https://jigsaw.w3.org/css-valida
  2. Result:
 
 
-
-
-
-
-
     ![CSS](docs/validation/css.gif)
-
-
-
-
-
 
 
 * checkout.css
@@ -344,23 +247,11 @@ Navigate to CSS Validator - [W3C CSS Validator](https://jigsaw.w3.org/css-valida
 
 
 
-
-
-
-
     ![CSS](docs/validation/css.gif)
 
 
 
-
-
-
-
 ## JavaScript Validator - Test 
-
-
-
-
 
 
 
@@ -369,13 +260,7 @@ Navigate to JS Validator  - [JSHint Validator](https://jshint.com/) - PASS
 
 
 
-
-
-
 * base.js file
-
-
-
 
 
 
@@ -401,9 +286,6 @@ Navigate to JS Validator  - [JSHint Validator](https://jshint.com/) - PASS
 
 
 
-
-
-
  1. Copy and paste stripe_elements.js file
 
 
@@ -416,15 +298,7 @@ Navigate to JS Validator  - [JSHint Validator](https://jshint.com/) - PASS
 
 
 
-
-
-
-
 For toasts messages javascript code:
-
-
-
-
 
 
 
@@ -437,13 +311,7 @@ For toasts messages javascript code:
 
 
 
-
-
-
 For preventing form to resubmit review:
-
-
-
 
 
 
@@ -465,13 +333,7 @@ For preventing form to resubmit review:
 
 
 
-
-
-
 Navigate to [PEP8 Validator](http://pep8online.com/) - PASS
-
-
-
 
 
 
@@ -509,10 +371,6 @@ For cart:
 
 
 2. Result: PASS on all files
-
-
-
-
 
 
 
@@ -752,15 +610,7 @@ For unique_shop:
 
 
 
-
-
-
-
 Python files in the main directory:
-
-
-
-
 
 
 
@@ -780,43 +630,13 @@ Python files in the main directory:
 
 
 
-
-
-
-
-
-
-
-
 # Responsive Test
 
-
-
-
-
-
-
 |Screen size\Browser |Chrome            |Opera             |Edge              |Firefox           |Safari            
-
-
-
 |--------------------|------------------|------------------|------------------|------------------|------------------| 
-
-
-
 |Mobile              |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
-
-
-
 |Tablet              |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|Not Tested        |
-
-
-
 |Desktop             |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
-
-
-
-
 
 
 
@@ -868,9 +688,6 @@ The website was tested on a varied number of devices:
 
 
 
-   
-
-
 
   Tested on  Chrome, Opera, Firefox and Microsoft Edge
 
@@ -884,13 +701,7 @@ The website was tested on a varied number of devices:
 
 
 
-
-
-
-
 Friends and family were asked to test this website. After receiving feedback from them some minor responsive issues were addressed like increment and decrement value not visible on mobile screens below 400px.
-
-
 
 
 
@@ -927,14 +738,7 @@ Comments: The shopping cart responsiveness issue below 340px was noticed and fix
 
 
 
-
-
-
 # Manual Test
-
-
-
-
 
 
 
@@ -980,19 +784,11 @@ Repeat steps on all pages - PASS
 
 
 
-
-
-
-
 ### Footer:
 
 
 
     Checking if the footer is sticking to the bottom on the relevant pages - PASS
-
-
-
-
 
 
 
@@ -1241,3 +1037,15 @@ For error 500:
 ### favicon 
 
 - ensure favicon presented on all pages - PASS
+
+
+
+## Code Issues
+
+
+
+**Understanding the problem** - 
+
+
+
+**Solution** - 

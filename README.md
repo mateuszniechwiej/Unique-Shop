@@ -72,10 +72,6 @@ UNIQUE Crafts & Design is a shop selling handcrafted items. Located in Geroge's 
 
 - [Testing](#testing)
 
-- [Code Issues](#code-issues)
-
-
-
 - [Deployment](#deployment)
 
   - [Project Initiation](#project-initiation)
@@ -915,16 +911,6 @@ There are several changes to the original design:
 :point_right: [TESTING](TESTING.md)
 
 
-
-## Code Issues
-
-
-
-**Understanding the problem** - 
-
-
-
-**Solution** - 
 
 
 
